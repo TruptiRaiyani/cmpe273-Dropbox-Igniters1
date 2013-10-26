@@ -1,0 +1,937 @@
+WARN  [2013-10-26 08:11:50,883] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 08:11:50,968] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 08:11:50,970] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 08:11:51,068] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 08:11:51,133] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 08:11:51,133] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 08:11:51,512] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 08:11:51,514] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-10-26 11:00:26,240] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 11:00:26,312] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 11:00:26,313] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 11:00:26,409] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 11:00:26,477] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 11:00:26,478] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-10-26 11:00:26,833] org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED InstrumentedBlockingChannelConnector@0.0.0.0:8080: java.net.BindException: Address already in use: bind
+! java.net.BindException: Address already in use: bind
+! at sun.nio.ch.Net.bind0(Native Method) ~[na:1.7.0_40]
+! at sun.nio.ch.Net.bind(Net.java:444) ~[na:1.7.0_40]
+! at sun.nio.ch.Net.bind(Net.java:436) ~[na:1.7.0_40]
+! at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214) ~[na:1.7.0_40]
+! at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.7.0_40]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector.open(BlockingChannelConnector.java:127) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector.doStart(BlockingChannelConnector.java:85) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.Server.doStart(Server.java:291) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.Service.run(Service.java:61) [dropwizard-core-0.6.2.jar:na]
+! at edu.sjsu.cmpe.dropbox.DropboxService.main(DropboxService.java:15) [classes/:na]
+WARN  [2013-10-26 11:00:26,833] org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED SocketConnector@0.0.0.0:8081: java.net.BindException: Address already in use: JVM_Bind
+! java.net.BindException: Address already in use: JVM_Bind
+! at java.net.DualStackPlainSocketImpl.bind0(Native Method) ~[na:1.7.0_40]
+! at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106) ~[na:1.7.0_40]
+! at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376) ~[na:1.7.0_40]
+! at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190) ~[na:1.7.0_40]
+! at java.net.ServerSocket.bind(ServerSocket.java:376) ~[na:1.7.0_40]
+! at java.net.ServerSocket.<init>(ServerSocket.java:237) ~[na:1.7.0_40]
+! at java.net.ServerSocket.<init>(ServerSocket.java:181) ~[na:1.7.0_40]
+! at org.eclipse.jetty.server.bio.SocketConnector.newServerSocket(SocketConnector.java:96) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.bio.SocketConnector.open(SocketConnector.java:85) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.bio.SocketConnector.doStart(SocketConnector.java:156) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.Server.doStart(Server.java:291) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.Service.run(Service.java:61) [dropwizard-core-0.6.2.jar:na]
+! at edu.sjsu.cmpe.dropbox.DropboxService.main(DropboxService.java:15) [classes/:na]
+WARN  [2013-10-26 11:00:26,834] org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@172e44d: MultiException[java.net.BindException: Address already in use: bind, java.net.BindException: Address already in use: JVM_Bind]
+! org.eclipse.jetty.util.MultiException: Multiple exceptions
+! at org.eclipse.jetty.server.Server.doStart(Server.java:273) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) ~[jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.Service.run(Service.java:61) [dropwizard-core-0.6.2.jar:na]
+! at edu.sjsu.cmpe.dropbox.DropboxService.main(DropboxService.java:15) [classes/:na]
+ERROR [2013-10-26 11:00:26,834] com.yammer.dropwizard.cli.ServerCommand: Unable to start server, shutting down
+! org.eclipse.jetty.util.MultiException: Multiple exceptions
+! at org.eclipse.jetty.server.Server.doStart(Server.java:273) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) ~[jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48) ~[dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.Service.run(Service.java:61) [dropwizard-core-0.6.2.jar:na]
+! at edu.sjsu.cmpe.dropbox.DropboxService.main(DropboxService.java:15) [classes/:na]
+INFO  [2013-10-26 11:00:26,834] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-10-26 11:00:26,834] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 11:00:26,835] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-10-26 11:00:26,835] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/C:/Users/ColdL/git/LocalDropbox/dropbox/target/classes/}
+INFO  [2013-10-26 11:00:28,837] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/C:/Users/ColdL/git/LocalDropbox/dropbox/target/classes/}
+INFO  [2013-10-26 11:00:28,837] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-10-26 11:04:11,522] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 11:04:11,594] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 11:04:11,595] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 11:04:11,691] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 11:04:11,771] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 11:04:11,771] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-10-26 11:04:12,155] org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED InstrumentedBlockingChannelConnector@0.0.0.0:8080: java.net.BindException: Address already in use: bind
+! java.net.BindException: Address already in use: bind
+! at sun.nio.ch.Net.bind0(Native Method) ~[na:1.7.0_40]
+! at sun.nio.ch.Net.bind(Net.java:444) ~[na:1.7.0_40]
+! at sun.nio.ch.Net.bind(Net.java:436) ~[na:1.7.0_40]
+! at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214) ~[na:1.7.0_40]
+! at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.7.0_40]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector.open(BlockingChannelConnector.java:127) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector.doStart(BlockingChannelConnector.java:85) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.Server.doStart(Server.java:291) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.Service.run(Service.java:61) [dropwizard-core-0.6.2.jar:na]
+! at edu.sjsu.cmpe.dropbox.DropboxService.main(DropboxService.java:15) [classes/:na]
+WARN  [2013-10-26 11:04:12,157] org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED SocketConnector@0.0.0.0:8081: java.net.BindException: Address already in use: JVM_Bind
+! java.net.BindException: Address already in use: JVM_Bind
+! at java.net.DualStackPlainSocketImpl.bind0(Native Method) ~[na:1.7.0_40]
+! at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106) ~[na:1.7.0_40]
+! at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376) ~[na:1.7.0_40]
+! at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190) ~[na:1.7.0_40]
+! at java.net.ServerSocket.bind(ServerSocket.java:376) ~[na:1.7.0_40]
+! at java.net.ServerSocket.<init>(ServerSocket.java:237) ~[na:1.7.0_40]
+! at java.net.ServerSocket.<init>(ServerSocket.java:181) ~[na:1.7.0_40]
+! at org.eclipse.jetty.server.bio.SocketConnector.newServerSocket(SocketConnector.java:96) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.bio.SocketConnector.open(SocketConnector.java:85) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.bio.SocketConnector.doStart(SocketConnector.java:156) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.Server.doStart(Server.java:291) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.Service.run(Service.java:61) [dropwizard-core-0.6.2.jar:na]
+! at edu.sjsu.cmpe.dropbox.DropboxService.main(DropboxService.java:15) [classes/:na]
+WARN  [2013-10-26 11:04:12,157] org.eclipse.jetty.util.component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@172e44d: MultiException[java.net.BindException: Address already in use: bind, java.net.BindException: Address already in use: JVM_Bind]
+! org.eclipse.jetty.util.MultiException: Multiple exceptions
+! at org.eclipse.jetty.server.Server.doStart(Server.java:273) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) ~[jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.Service.run(Service.java:61) [dropwizard-core-0.6.2.jar:na]
+! at edu.sjsu.cmpe.dropbox.DropboxService.main(DropboxService.java:15) [classes/:na]
+ERROR [2013-10-26 11:04:12,158] com.yammer.dropwizard.cli.ServerCommand: Unable to start server, shutting down
+! org.eclipse.jetty.util.MultiException: Multiple exceptions
+! at org.eclipse.jetty.server.Server.doStart(Server.java:273) ~[jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) ~[jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48) ~[dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53) [dropwizard-core-0.6.2.jar:na]
+! at com.yammer.dropwizard.Service.run(Service.java:61) [dropwizard-core-0.6.2.jar:na]
+! at edu.sjsu.cmpe.dropbox.DropboxService.main(DropboxService.java:15) [classes/:na]
+INFO  [2013-10-26 11:04:12,158] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-10-26 11:04:12,158] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 11:04:12,159] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-10-26 11:04:12,159] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/C:/Users/ColdL/git/LocalDropbox/dropbox/target/classes/}
+INFO  [2013-10-26 11:04:14,160] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/C:/Users/ColdL/git/LocalDropbox/dropbox/target/classes/}
+INFO  [2013-10-26 11:04:14,160] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-10-26 11:06:46,391] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 11:06:46,463] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 11:06:46,465] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 11:06:46,560] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 11:06:46,630] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 11:06:46,630] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 11:06:46,941] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 11:06:46,943] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-10-26 11:12:50,745] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 11:12:50,835] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 11:12:50,837] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 11:12:50,931] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 11:12:50,999] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 11:12:51,000] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 11:12:51,297] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 11:12:51,298] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-10-26 11:15:48,274] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 11:15:48,406] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 11:15:48,410] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 11:15:48,621] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 11:15:48,749] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 11:15:48,749] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 11:15:49,095] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 11:15:49,096] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-10-26 11:20:42,895] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 11:20:42,962] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 11:20:42,964] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 11:20:43,069] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 11:20:43,138] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 11:20:43,138] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 11:20:43,422] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 11:20:43,424] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-10-26 11:22:06,866] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 11:22:06,951] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 11:22:06,953] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 11:22:07,067] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 11:22:07,367] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 11:22:07,367] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 11:22:07,864] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 11:22:07,866] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-10-26 12:20:47,538] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 12:20:47,617] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 12:20:47,619] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 12:20:47,702] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 12:20:47,766] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 12:20:47,766] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 12:20:48,030] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 12:20:48,031] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-10-26 12:45:50,530] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 12:45:50,654] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 12:45:50,657] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 12:45:50,752] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 12:45:50,814] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 12:45:50,815] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 12:45:51,076] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 12:45:51,077] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+ERROR [2013-10-26 12:46:30,801] com.yammer.dropwizard.jersey.LoggingExceptionMapper: Error handling a request: 02adbbd4a82378d7
+! java.lang.NullPointerException: null
+! at edu.sjsu.cmpe.dropbox.api.resources.MongoDBInstance.getColluser(MongoDBInstance.java:27) ~[classes/:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.<init>(DropboxResource.java:40) ~[classes/:na]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_40]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_40]
+! at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_40]
+! at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_40]
+! at com.sun.jersey.server.spi.component.ResourceComponentConstructor._construct(ResourceComponentConstructor.java:191) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.spi.component.ResourceComponentConstructor.construct(ResourceComponentConstructor.java:179) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.resource.PerRequestFactory$PerRequest._getInstance(PerRequestFactory.java:182) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.resource.PerRequestFactory$AbstractPerRequest.getInstance(PerRequestFactory.java:144) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationContext.getResource(WebApplicationContext.java:238) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:83) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [jersey-servlet-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [jersey-servlet-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [jersey-servlet-1.17.1.jar:1.17.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-core-0.6.2.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [metrics-jetty-2.2.0.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropwizard-core-0.6.2.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [jetty-http-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at java.lang.Thread.run(Thread.java:724) [na:1.7.0_40]
+ERROR [2013-10-26 12:46:32,007] com.yammer.dropwizard.jersey.LoggingExceptionMapper: Error handling a request: 0a098c606d5ab48a
+! java.lang.NullPointerException: null
+! at edu.sjsu.cmpe.dropbox.api.resources.MongoDBInstance.getColluser(MongoDBInstance.java:27) ~[classes/:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.<init>(DropboxResource.java:40) ~[classes/:na]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_40]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_40]
+! at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_40]
+! at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_40]
+! at com.sun.jersey.server.spi.component.ResourceComponentConstructor._construct(ResourceComponentConstructor.java:191) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.spi.component.ResourceComponentConstructor.construct(ResourceComponentConstructor.java:179) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.resource.PerRequestFactory$PerRequest._getInstance(PerRequestFactory.java:182) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.resource.PerRequestFactory$AbstractPerRequest.getInstance(PerRequestFactory.java:144) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationContext.getResource(WebApplicationContext.java:238) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:83) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [jersey-servlet-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [jersey-servlet-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [jersey-servlet-1.17.1.jar:1.17.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-core-0.6.2.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [metrics-jetty-2.2.0.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropwizard-core-0.6.2.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [jetty-http-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at java.lang.Thread.run(Thread.java:724) [na:1.7.0_40]
+ERROR [2013-10-26 12:46:32,806] com.yammer.dropwizard.jersey.LoggingExceptionMapper: Error handling a request: 6b0a52733c39dc2e
+! java.lang.NullPointerException: null
+! at edu.sjsu.cmpe.dropbox.api.resources.MongoDBInstance.getColluser(MongoDBInstance.java:27) ~[classes/:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.<init>(DropboxResource.java:40) ~[classes/:na]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_40]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_40]
+! at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_40]
+! at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_40]
+! at com.sun.jersey.server.spi.component.ResourceComponentConstructor._construct(ResourceComponentConstructor.java:191) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.spi.component.ResourceComponentConstructor.construct(ResourceComponentConstructor.java:179) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.resource.PerRequestFactory$PerRequest._getInstance(PerRequestFactory.java:182) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.resource.PerRequestFactory$AbstractPerRequest.getInstance(PerRequestFactory.java:144) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationContext.getResource(WebApplicationContext.java:238) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:83) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [jersey-servlet-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [jersey-servlet-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [jersey-servlet-1.17.1.jar:1.17.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-core-0.6.2.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [metrics-jetty-2.2.0.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropwizard-core-0.6.2.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [jetty-http-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at java.lang.Thread.run(Thread.java:724) [na:1.7.0_40]
+WARN  [2013-10-26 12:47:57,144] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 12:47:57,225] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 12:47:57,227] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 12:47:57,335] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 12:47:57,414] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 12:47:57,417] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 12:47:57,868] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 12:47:57,871] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-10-26 18:52:51,298] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 18:52:51,370] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 18:52:51,372] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 18:52:51,470] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 18:52:51,541] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 18:52:51,541] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 18:52:51,845] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 18:52:51,847] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+ERROR [2013-10-26 18:53:04,940] com.yammer.dropwizard.jersey.LoggingExceptionMapper: Error handling a request: 71537ea68acc96c4
+! java.lang.NullPointerException: null
+! at edu.sjsu.cmpe.dropbox.api.resources.MongoDBInstance.getColluser(MongoDBInstance.java:27) ~[classes/:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.<init>(DropboxResource.java:40) ~[classes/:na]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_40]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_40]
+! at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_40]
+! at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_40]
+! at com.sun.jersey.server.spi.component.ResourceComponentConstructor._construct(ResourceComponentConstructor.java:191) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.spi.component.ResourceComponentConstructor.construct(ResourceComponentConstructor.java:179) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.resource.PerRequestFactory$PerRequest._getInstance(PerRequestFactory.java:182) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.resource.PerRequestFactory$AbstractPerRequest.getInstance(PerRequestFactory.java:144) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationContext.getResource(WebApplicationContext.java:238) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:83) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [jersey-servlet-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [jersey-servlet-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [jersey-servlet-1.17.1.jar:1.17.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-core-0.6.2.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [metrics-jetty-2.2.0.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropwizard-core-0.6.2.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [jetty-http-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at java.lang.Thread.run(Thread.java:724) [na:1.7.0_40]
+WARN  [2013-10-26 18:53:55,200] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 18:53:55,277] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 18:53:55,278] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 18:53:55,380] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 18:53:55,451] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 18:53:55,451] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 18:53:55,766] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 18:53:55,767] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+ERROR [2013-10-26 18:53:58,203] com.yammer.dropwizard.jersey.LoggingExceptionMapper: Error handling a request: 90166f26255bdc8f
+! java.lang.NullPointerException: null
+! at edu.sjsu.cmpe.dropbox.api.resources.MongoDBInstance.getColluser(MongoDBInstance.java:27) ~[classes/:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.<init>(DropboxResource.java:40) ~[classes/:na]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_40]
+! at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_40]
+! at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_40]
+! at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_40]
+! at com.sun.jersey.server.spi.component.ResourceComponentConstructor._construct(ResourceComponentConstructor.java:191) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.spi.component.ResourceComponentConstructor.construct(ResourceComponentConstructor.java:179) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.resource.PerRequestFactory$PerRequest._getInstance(PerRequestFactory.java:182) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.resource.PerRequestFactory$AbstractPerRequest.getInstance(PerRequestFactory.java:144) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationContext.getResource(WebApplicationContext.java:238) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:83) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) ~[jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [jersey-server-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [jersey-servlet-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [jersey-servlet-1.17.1.jar:1.17.1]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [jersey-servlet-1.17.1.jar:1.17.1]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [javax.servlet-3.0.0.v201112011016.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropwizard-core-0.6.2.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [jetty-servlet-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [metrics-jetty-2.2.0.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropwizard-core-0.6.2.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [jetty-http-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [jetty-http-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [jetty-server-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [jetty-util-8.1.10.v20130312.jar:8.1.10.v20130312]
+! at java.lang.Thread.run(Thread.java:724) [na:1.7.0_40]
+WARN  [2013-10-26 18:57:35,111] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 18:57:35,248] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 18:57:35,252] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 18:57:35,383] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 18:57:35,456] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 18:57:35,456] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 18:57:35,818] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 18:57:35,819] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-10-26 18:59:51,509] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 18:59:51,581] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 18:59:51,583] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 18:59:51,679] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 18:59:51,748] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 18:59:51,748] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 18:59:52,087] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 18:59:52,089] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-10-26 19:02:52,766] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-10-26 19:02:52,849] com.yammer.dropwizard.cli.ServerCommand: Starting dropbox-service
+INFO  [2013-10-26 19:02:52,851] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2013-10-26 19:02:52,947] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-10-26 19:02:53,015] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-10-26 19:02:53,015] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2013-10-26 19:02:53,359] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-10-26 19:02:53,361] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
