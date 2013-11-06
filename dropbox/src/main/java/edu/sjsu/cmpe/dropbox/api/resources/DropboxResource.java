@@ -82,5 +82,106 @@ public class DropboxResource {
 	        manageFile.updateFileByEmail(userID, id, firstName);
 		}
 // Aradhana ends
-		
+// Sina Starts		
+	    @DELETE
+	    @Path("/{userID}")
+	    @Timed(name = "delete-user")
+	    public Response deleteUserByEmail(@PathParam("userID") int userID) {
+		// FIXME - Dummy code
+	    	BasicDBObject user = new BasicDBObject();
+	    	user.put("userID", userID);
+	    	DBCursor cursor = colluser.find(user);
+
+	    	while (cursor.hasNext()){
+	    		 BasicDBList e = (BasicDBList) cursor.next().get("myFiles"); 
+	    		 for (int i=0;i<e.size();i++) {
+	    			 BasicDBObject file = new BasicDBObject();
+	    		    	file.put("fileID", e.get(i));
+	    		    	colldocument.remove(file);
+	    			 }
+	    	}
+
+	    	colluser.remove(user);
+	    	return Response.status(201).entity(new LinkDto("create-user", "/users","POST")).build();
+	    }
+
+	    @GET
+	    @Path("/{userID}/filesShared/{id}")
+	    @Timed(name = "view-filesShared")
+	    public Response getFilesSharedByEmailById(@PathParam("userID") int userID, @PathParam("id") int id) {
+
+	    	BasicDBObject andQuery = new BasicDBObject();
+	    	List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
+	    	obj.add(new BasicDBObject("fileID", id));
+	    	obj.add(new BasicDBObject("sharedWith", userID));
+	    	andQuery.put("$and", obj);
+	    	DBCursor cursor = colldocument.find(andQuery);
+	    	String output = "";
+	    	while(cursor.hasNext()) {
+	    	    output +=cursor.next();
+	    	}
+
+	    	return Response.status(200).entity(output).build();
+	    }
+	    
+	    @POST
+	    @Timed(name = "create-user")
+	    public Response setUserByEmail(User user) {
+
+	    	BasicDBObject query = new BasicDBObject();
+	    	BasicDBObject field = new BasicDBObject();
+	    	field.put("userCount", 1);
+	    	DBCursor cursor = colluser.find(query,field);
+	    	int userID=99;
+	    	BasicDBObject obj = (BasicDBObject) cursor.next();
+	    	userID=obj.getInt("userCount"); 	
+	   
+	    	BasicDBObject ob = new BasicDBObject();
+	    	ob.append("userID", userID);
+	    	ob.append("firstName", user.getFirstName());
+	    	ob.append("lastName", user.getLastName());
+	    	ob.append("password", user.getPassword());
+	    	ob.append("email", user.getEmail());
+	    	ob.append("status", user.getStatus());
+	    	ob.append("designation", user.getDesignation());
+	    	ob.append("myFiles",new ArrayList<String>());
+	    	ob.append("filesShared",new ArrayList<String>());   	
+	    	colluser.insert(ob);
+	    	BasicDBObject countQuery = new BasicDBObject().append("userCount", userID);
+	    	BasicDBObject newDoc = new BasicDBObject();
+	    	newDoc.append("$set", new BasicDBObject("userCount",++userID));
+	    	colluser.update(countQuery,newDoc );
+	    	
+	    	LinksDto links = new LinksDto();
+	    	links.addLink(new LinkDto("view-user", "/users/" + user.getEmail(),
+	    		"GET"));
+	    	links.addLink(new LinkDto("update-user",
+	    		"/users/" + user.getEmail(), "PUT"));
+	    	links.addLink(new LinkDto("update-user",
+	        		"/users/" + user.getEmail(), "POST"));
+	    	links.addLink(new LinkDto("delete-user",
+	        		"/users/" + user.getEmail(), "DELETE"));
+	    	links.addLink(new LinkDto("create-file",
+	        		"/users/" + user.getEmail() +"/files", "POST"));
+
+	    	return Response.status(201).entity(links).build();
+	  	
+	    }
+	    
+	    @ GET
+	    @Path("/{userID}")
+	    @Timed(name = "view-user")
+	    public Response getUserByUID(@PathParam("userID") int uID) {
+	    	
+	    	DBCursor cursor = colluser.find(new BasicDBObject().append("userID", uID ));
+	    	
+	    	String output = "";
+	    	while(cursor.hasNext()) {
+	    		output +=cursor.next();
+	    	
+	    	}
+
+	    	return Response.status(200).entity(output).build();
+	    }
+// Sina Ends	    
 }
