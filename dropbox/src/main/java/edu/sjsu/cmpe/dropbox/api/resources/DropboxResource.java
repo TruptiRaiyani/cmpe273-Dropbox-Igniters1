@@ -183,5 +183,62 @@ public class DropboxResource {
 
 	    	return Response.status(200).entity(output).build();
 	    }
-// Sina Ends	    
+// Sina Ends	
+	    
+	    //Trupti Start
+	    @GET
+	    @Path("/{userID}/files")
+	    @Timed(name = "Get-myfiles")
+	    public Response getMyFilesByUserID(@PathParam("userID") long userid) {
+	    	BasicDBObject query = new BasicDBObject().append("owner",userid);
+	    	BasicDBObject fields = new BasicDBObject();
+	    	
+	    	DBCursor cursor = colldocument.find(query, fields);
+	    	String output = "";
+	    	while(cursor.hasNext()) {
+	    	    output +=cursor.next();
+	    	}
+	    	return Response.status(200).entity(output).build();
+	    }
+	    
+	    @GET
+	    @Path("/{userID}/filesShared")
+	    @Timed(name = "Get-filesshared")
+	    public Response getSharedFilesByUserID(@PathParam("userID") long userid) {
+	    	BasicDBObject query = new BasicDBObject().append("sharedWith",userid);
+	    	BasicDBObject fields = new BasicDBObject();
+	    	
+	    	DBCursor cursor = colldocument.find(query, fields);
+	    	String output = "";
+	    	while(cursor.hasNext()) {
+	    	    output +=cursor.next();
+	    	}
+	    	return Response.status(200).entity(output).build();
+	    }
+	    
+	    @PUT
+	    @Path("/{userID}")
+	    @Timed(name = "update-userdata")
+	    public void updateUserdataByUserID(@PathParam("userID") long userid,@QueryParam("firstName") String firstName,@QueryParam("lastName") String lastName,@QueryParam("password") String password,@QueryParam("email") String email,@QueryParam("status") String status,@QueryParam("designation") String designation) {
+		// FIXME - Dummy code
+		   BasicDBObject ob = new BasicDBObject();
+		   if(firstName != null)
+	   	ob.append("firstName", firstName);
+		   if(lastName != null)
+	   	ob.append("lastName", lastName);
+		   if(password != null)
+	   	ob.append("password", password);
+		   if(email != null)
+	   	ob.append("email", email);
+		   if(status != null)
+	   	ob.append("status", status);
+		   if(designation != null)
+	   	ob.append("designation", designation);
+
+	        	BasicDBObject query = new BasicDBObject().append("UserID", userid);
+	        	BasicDBObject newDoc = new BasicDBObject().append("$set", ob);
+	        	colluser.update(query,newDoc );
+	        	
+	    //Trupti End
+}
 }
