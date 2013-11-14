@@ -1,10 +1,14 @@
 package edu.sjsu.cmpe.dropbox.api.resources;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -23,11 +27,15 @@ import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.gridfs.GridFS;
+import com.mongodb.gridfs.GridFSDBFile;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 import com.yammer.metrics.annotation.Timed;
 
 import edu.sjsu.cmpe.dropbox.domain.User;
+import edu.sjsu.cmpe.dropbox.domain.userFile;
 import edu.sjsu.cmpe.dropbox.dto.FileDto;
 import edu.sjsu.cmpe.dropbox.dto.LinkDto;
 import edu.sjsu.cmpe.dropbox.dto.LinksDto;
@@ -198,7 +206,7 @@ public class DropboxResource {
 	        return retVal;
 	    }
 
-	    @GET
+	  /*  @GET
 	    @Path("/{userid}/filesshared")
 	    @Produces(MediaType.TEXT_HTML)
 	    @Timed(name = "Get-filesshared")
@@ -225,23 +233,80 @@ public class DropboxResource {
 //	    	    output +=cursor.next();
 //	    	}
 	    	return Response.status(200).entity(output.toString()).build();
-	    }
+	    }*/
 // Sina Ends	
 	    
 	    //Trupti Start
 	    @GET
-	    @Path("/{userID}/files")
+	    @Path("/{userID}/myfiles")
+	    @Produces(MediaType.TEXT_HTML)
 	    @Timed(name = "Get-myfiles")
-	    public Response getMyFilesByUserID(@PathParam("userID") long userid) {
-	    	BasicDBObject query = new BasicDBObject().append("owner",userid);
-	    	BasicDBObject fields = new BasicDBObject();
-	    	
-	    	DBCursor cursor = colldocument.find(query, fields);
-	    	String output = "";
-	    	while(cursor.hasNext()) {
-	    	    output +=cursor.next();
-	    	}
-	    	return Response.status(200).entity(output).build();
+	    public Response getMyFilesByUserID(@PathParam("userID") long userid) throws IOException {
+	    		//MongoClient db = new MongoClient();
+	    		//DB dbc = db.getDB("test");
+	    		List<userFile> uf = new ArrayList<userFile>();
+	    		GridFS myFS = new GridFS(mongodb.getdb(), "document");
+			
+	    		userFile uf1 = null;
+	    		List<GridFSDBFile> getfile = myFS.find(new BasicDBObject("metadata.owner" , userid ));
+	    		Writer output = new StringWriter();	    		
+	    		Iterator< GridFSDBFile> eachFile =  getfile.iterator();
+	    		while( eachFile.hasNext() )
+	    			{			 
+	    			uf1 = new userFile();
+	    			GridFSDBFile gf = eachFile.next();
+	    			uf1.setName(gf.getFilename());
+	    			DBObject db1 = gf.getMetaData();
+	    			uf1.setFileID((Integer) db1.get("fileID"));	    			
+	    			uf.add(uf1);
+	    			}
+	    		try {
+		    		cfg = createFreemarkerConfiguration();
+					template = cfg.getTemplate("myfiles.ftl");
+					SimpleHash root = new SimpleHash();
+					root.put("myfiles", uf);
+					template.process(root, output);
+					
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    		return Response.status(200).entity(output.toString()).build();
+	    	//return new MyfilesView(manageFile.getMyFiles());
+	    }
+	    
+	    @GET
+	    @Path("/{userID}/filesShared")
+	    @Timed(name = "Get-filesshared")
+	    public Response getSharedFilesByUserID(@PathParam("userID") long userid) {
+	    	GridFS myFS = new GridFS(mongodb.getdb(), "document");
+	    	List<GridFSDBFile> getfile = myFS.find(new BasicDBObject("metadata.sharedWith" , userid ));
+	    	userFile uf1 = null;
+	    	List<userFile> uf = new ArrayList<userFile>();
+	    	Writer output = new StringWriter();	    		
+    		Iterator< GridFSDBFile> eachFile =  getfile.iterator();
+    		while( eachFile.hasNext() )
+    			{			 
+    			uf1 = new userFile();
+    			GridFSDBFile gf = eachFile.next();
+    			uf1.setName(gf.getFilename());
+    			DBObject db1 = gf.getMetaData();
+    			uf1.setFileID((Integer) db1.get("fileID"));
+    			// get all metadata items as user wants
+    			uf.add(uf1);
+    			}
+    		try {
+	    		cfg = createFreemarkerConfiguration();
+				template = cfg.getTemplate("myfiles.ftl");
+				SimpleHash root = new SimpleHash();
+				root.put("myfiles", uf);
+				template.process(root, output);
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    		return Response.status(200).entity(output.toString()).build();
 	    }
 	    
 	    @PUT
@@ -267,6 +332,42 @@ public class DropboxResource {
 	        	BasicDBObject newDoc = new BasicDBObject().append("$set", ob);
 	        	colluser.update(query,newDoc );
 	        	
-	    //Trupti End
+	   
+	        	
+	        	
 }
+	    @GET
+		   @Path("/{userID}/mydoc/{fileID}")
+		   @Timed(name = "update-userdata")
+		    public void GetFile(@PathParam("fileID") long fileID) throws IOException
+		    {
+			  	  
+		    	GridFS myFS = new GridFS(mongodb.getdb(), "document");	
+		    	 
+				GridFSDBFile getfile = myFS.findOne(new BasicDBObject("metadata.fileID" , fileID ));
+				String directoryName = "C:/testDB";
+				File theDir = new File(directoryName);
+				  // if the directory does not exist, create it
+				  if (!theDir.exists()) {
+				    System.out.println("creating directory: " + directoryName);
+				    boolean result = theDir.mkdir();  
+
+				     if(result) {    
+				       System.out.println("DIR created");  
+				     }
+				  }
+				  String filePath = "C:/testDB/" + getfile.getFilename();
+				  File yourFile = new File(filePath);
+				  if(!yourFile.exists()) {
+				      yourFile.createNewFile();
+				  } 
+				FileOutputStream ofile = new FileOutputStream(filePath);
+					
+			     getfile.writeTo(ofile);
+			     Desktop d =  Desktop.getDesktop();
+			     d.open(yourFile);
+				
+		    }
+	    //Trupti End
+
 }
