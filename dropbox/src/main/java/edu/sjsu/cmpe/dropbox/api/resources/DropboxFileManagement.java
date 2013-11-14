@@ -75,11 +75,11 @@ public class DropboxFileManagement {
 		}
 
 		if (object == null) {
-			System.out.println("File cannot be shared with user");
+			System.out.println("userFile cannot be shared with user");
 			return false;
 		} else {
 			System.out
-					.println("File can be shared with the user as user exists in sharedWith");
+					.println("userFile can be shared with the user as user exists in sharedWith");
 			return true;
 		}
 	}	

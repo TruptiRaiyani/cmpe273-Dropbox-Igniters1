@@ -2,7 +2,7 @@ package edu.sjsu.cmpe.dropbox.domain;
  	
 import java.util.ArrayList;
 
-public class File {
+public class userFile {
 	private int fileID;
 	private String name;
 	private String owner;
@@ -10,7 +10,7 @@ public class File {
 	private ArrayList<String> sharedWith= new ArrayList<String>();
 	private boolean update;
 
-	public File()
+	public userFile()
 	{
 		setAccessType("private");
 		setUpdate(false);

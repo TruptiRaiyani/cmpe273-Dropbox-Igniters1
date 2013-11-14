@@ -2,26 +2,26 @@ package edu.sjsu.cmpe.dropbox.dto;
 
 import java.util.ArrayList;
 
-import edu.sjsu.cmpe.dropbox.domain.File;
+import edu.sjsu.cmpe.dropbox.domain.userFile;
 
 public class FilesDto extends LinksDto {
 
-    private ArrayList<File> Files = new ArrayList<File>();
+    private ArrayList<userFile> userFiles = new ArrayList<userFile>();
 
     /**
      * @param book
      */
-    public FilesDto(ArrayList<File> Files) {
+    public FilesDto(ArrayList<userFile> userFiles) {
 	super();
-	this.setFiles(Files);
+	this.setFiles(userFiles);
     }
 
-	public ArrayList<File> getFiles() {
-		return Files;
+	public ArrayList<userFile> getFiles() {
+		return userFiles;
 	}
 
-	public void setFiles(ArrayList<File> Files) {
-		this.Files = Files;
+	public void setFiles(ArrayList<userFile> userFiles) {
+		this.userFiles = userFiles;
 	}
 
 }

@@ -10,8 +10,8 @@ public class User {
     private String email;
     private String status;
     private String designation;
-    private ArrayList<File> myFiles=new ArrayList<File>();
-    private ArrayList<File> filesShared=new ArrayList<File>();
+    private ArrayList<userFile> myFiles=new ArrayList<userFile>();
+    private ArrayList<userFile> filesShared=new ArrayList<userFile>();
     // add more fields here
 
     /**
@@ -63,19 +63,19 @@ public class User {
 		this.status = status;
 	}
 
-	public ArrayList<File> getmyFiles() {
+	public ArrayList<userFile> getmyFiles() {
 		return myFiles;
 	}
 
-	public void setmyFiles(ArrayList<File> myFiles) {
+	public void setmyFiles(ArrayList<userFile> myFiles) {
 		this.myFiles = myFiles;
 	}
 
-	public ArrayList<File> getFilesShared() {
+	public ArrayList<userFile> getFilesShared() {
 		return filesShared;
 	}
 
-	public void setFilesShared(ArrayList<File> filesShared) {
+	public void setFilesShared(ArrayList<userFile> filesShared) {
 		this.filesShared = filesShared;
 	}
 

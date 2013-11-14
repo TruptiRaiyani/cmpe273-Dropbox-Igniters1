@@ -2,6 +2,8 @@ package edu.sjsu.cmpe.dropbox.api.resources;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +32,10 @@ import edu.sjsu.cmpe.dropbox.dto.FileDto;
 import edu.sjsu.cmpe.dropbox.dto.LinkDto;
 import edu.sjsu.cmpe.dropbox.dto.LinksDto;
 import edu.sjsu.cmpe.dropbox.view.UploadView;
+import edu.sjsu.cmpe.dropbox.api.resources.DropboxFileManagement;
+import freemarker.template.Configuration;
+import freemarker.template.SimpleHash;
+import freemarker.template.Template;
 
 
 @Path("/v1/users")
@@ -42,7 +48,9 @@ public class DropboxResource {
 	private DBCollection colldocument = mongodb.getColldocument();
 	
 	private DropboxFileManagement manageFile = new DropboxFileManagement();
-	
+	private Configuration cfg;
+	private Template template;	
+
 //	Aradhana		
 		@GET    
 	    @Path("/{userID}/files")
@@ -183,6 +191,41 @@ public class DropboxResource {
 
 	    	return Response.status(200).entity(output).build();
 	    }
+
+		private Configuration createFreemarkerConfiguration() {
+	        Configuration retVal = new Configuration();
+	        retVal.setClassForTemplateLoading(DropboxResource.class, "/freemarker");
+	        return retVal;
+	    }
+
+	    @GET
+	    @Path("/{userid}/filesshared")
+	    @Produces(MediaType.TEXT_HTML)
+	    @Timed(name = "Get-filesshared")
+	    public Response getSharedFilesByUserID(@PathParam("userid") long userid) {
+	    	BasicDBObject query = new BasicDBObject().append("sharedWith",userid);
+	    	BasicDBObject fields = new BasicDBObject();
+	    	
+	    	DBCursor cursor = colldocument.find(query, fields);
+	    	Writer output = new StringWriter();
+	    	
+	    	try {
+	    		cfg = createFreemarkerConfiguration();
+				template = cfg.getTemplate("sharedFiles.ftl");
+				SimpleHash root = new SimpleHash();
+				root.put("sharedFiles", cursor.toArray());
+				template.process(root, output);
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+//	    	String output = "";
+//	    	while(cursor.hasNext()) {
+//	    	    output +=cursor.next();
+//	    	}
+	    	return Response.status(200).entity(output.toString()).build();
+	    }
 // Sina Ends	
 	    
 	    //Trupti Start
@@ -191,21 +234,6 @@ public class DropboxResource {
 	    @Timed(name = "Get-myfiles")
 	    public Response getMyFilesByUserID(@PathParam("userID") long userid) {
 	    	BasicDBObject query = new BasicDBObject().append("owner",userid);
-	    	BasicDBObject fields = new BasicDBObject();
-	    	
-	    	DBCursor cursor = colldocument.find(query, fields);
-	    	String output = "";
-	    	while(cursor.hasNext()) {
-	    	    output +=cursor.next();
-	    	}
-	    	return Response.status(200).entity(output).build();
-	    }
-	    
-	    @GET
-	    @Path("/{userID}/filesShared")
-	    @Timed(name = "Get-filesshared")
-	    public Response getSharedFilesByUserID(@PathParam("userID") long userid) {
-	    	BasicDBObject query = new BasicDBObject().append("sharedWith",userid);
 	    	BasicDBObject fields = new BasicDBObject();
 	    	
 	    	DBCursor cursor = colldocument.find(query, fields);
