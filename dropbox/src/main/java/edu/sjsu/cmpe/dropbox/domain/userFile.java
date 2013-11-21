@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class userFile {
 	private int fileID;
 	private String name;
-	private String owner;
+	private int owner;
 	private String accessType;
 	private ArrayList<String> sharedWith= new ArrayList<String>();
 	private boolean update;
@@ -27,10 +27,10 @@ public class userFile {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getOwner() {
+	public int getOwner() {
 		return owner;
 	}
-	public void setOwner(String owner) {
+	public void setOwner(int owner) {
 		this.owner = owner;
 	}
 	public String getAccessType() {

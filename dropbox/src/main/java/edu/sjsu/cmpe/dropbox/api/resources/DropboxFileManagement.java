@@ -14,6 +14,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.gridfs.GridFS;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 
 import edu.sjsu.cmpe.dropbox.domain.User;
@@ -175,15 +176,15 @@ public class DropboxFileManagement {
 
 	public LinkDto deleteMyFileByUserIdAndId(int userID, Integer id) {
 
-		if (checkOwnerOfFile(userID, id)) {
-			System.out.println("userId has permission to delete the file");
-			colldocument.remove(new BasicDBObject().append("fileID", id));
-		} else {
-			System.out
-					.println("userId does not have permission to delete the file");
-		}
-		return new LinkDto("create-file", "/users/" + userID, "POST");
-
+//		if (checkOwnerOfFile(userID, id)) {
+				GridFS myFS = new GridFS(mongodb.getdb(), "document");	
+				myFS.remove(new BasicDBObject().append("metadata.fileID", id));
+				//colldocument.remove(new BasicDBObject().append("metadata.fileID", id));
+		/*	} else {
+				System.out
+						.println("userId does not have permission to delete the file");
+			}*/
+			return new LinkDto("create-file", "/users/" + userID, "POST");
 	}
 	
 	public void updateFileByEmail(int userID, int id,String firstName) {

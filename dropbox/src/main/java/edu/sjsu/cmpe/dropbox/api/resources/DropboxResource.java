@@ -257,7 +257,8 @@ public class DropboxResource {
 	    			GridFSDBFile gf = eachFile.next();
 	    			uf1.setName(gf.getFilename());
 	    			DBObject db1 = gf.getMetaData();
-	    			uf1.setFileID((Integer) db1.get("fileID"));	    			
+	    			uf1.setFileID((Integer) db1.get("fileID"));	  
+	    			uf1.setOwner((Integer)db1.get("owner"));
 	    			uf.add(uf1);
 	    			}
 	    		try {
@@ -368,6 +369,38 @@ public class DropboxResource {
 			     d.open(yourFile);
 				
 		    }
+	    @GET
+		   @Path("/signup")
+	    @Produces(MediaType.TEXT_HTML)
+		   @Timed(name = "signup")
+		    public Response SignUp() 
+		    {
+	    	Writer output = new StringWriter();	
+	    	try {
+	    		cfg = createFreemarkerConfiguration();
+				template = cfg.getTemplate("signup.ftl");
+				SimpleHash root = new SimpleHash();
+			//	root.put("myfiles", uf);
+				template.process(root, output);
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+ 		return Response.status(200).entity(output.toString()).build();
+		    }
+	    @GET
+		   @Path("/emailcheck/{email}")
+		   @Timed(name = "update-userdata")
+		    public boolean GetFile(@PathParam("email") String email)
+	    {
+	    	boolean isExists = false;
+	    	DBCursor cursor = null;
+	    	 cursor = colluser.find(new BasicDBObject("email", email ));
+	    	if(cursor.itcount() > 0)
+	    		isExists = true;
+	    	return isExists;
+	    }
 	    //Trupti End
 
 }

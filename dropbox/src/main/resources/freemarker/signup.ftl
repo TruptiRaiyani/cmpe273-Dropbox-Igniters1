@@ -11,7 +11,8 @@
 </script>
 </head>
         <body>
-          
+        
+          <div id="errfn">  </div>
             <table border="1">
            
                 <tr>
@@ -19,7 +20,7 @@
          			   First Name:
          			 </td>
          			 <td>
-          				  <input type="text" id="firstName" name="firstName" value="">
+          				  <input type="text" id="firstName" name="firstName" value=""> *
         			  </td>
                 </tr>
            		<tr>
@@ -27,7 +28,7 @@
          			   Last Name:
          			 </td>
          			 <td>
-          				  <input type="text" id="lastName" name="lastName" value="">
+          				  <input type="text" id="lastName" name="lastName" value=""> *
         			  </td>
                 </tr>
                 <tr>
@@ -35,7 +36,7 @@
          			   Email:
          			 </td>
          			 <td>
-          				  <input type="text" id ="email" name="email" value="">
+          				  <input type="text" id ="email" name="email" value=""> *
         			  </td>
                 </tr>
                  <tr>
@@ -43,7 +44,7 @@
             		Password:
           			</td>
           			<td>
-            			<input type="password" id="password" name="password" value="">
+            			<input type="password" id="password" name="password" value=""> *
           			</td>
           		</tr>
                 <tr>
@@ -55,7 +56,7 @@
 							<option value="Software Engineer">Software Engineer</option>
 							<option value="Manager">Manager</option>
 							<option value="Team Lead">Team Lead</option>
-						</select>
+						</select> *
         			  </td>
                 </tr>
                 <tr><td> <button id="btnSubmit" type="submit" >Submit</button></td></tr>
@@ -71,10 +72,29 @@
    <script >
            $(document).ready(function() {
            $("#btnSubmit").click(function() {
-         
-         //  alert( $('#firstName').val());
-  
-	var formData = {"firstName" : $('#firstName').val(), "lastName" : $('#lastName').val(), "password" : $('#password').val(), "email": $('#email').val(), "status" : "activated", "designation" : $('#designation').val()}
+         if(!validateForm())
+         {
+         alert('not valid data');
+         return;
+         }
+         var isExists;
+	$.ajax({
+		  type: "GET",
+		  url: "/dropbox/v1/users/emailcheck/" + $('#email').val(),
+		
+		  dataType: "json",
+		  contentType: "application/json",
+		 
+		  success: function(data) {
+			  isExists=data;
+			  if(isExists)
+				{
+				alert('Email address already exists.');
+				
+				}
+			else
+			{
+			var formData = {"firstName" : $('#firstName').val(), "lastName" : $('#lastName').val(), "password" : $('#password').val(), "email": $('#email').val(), "status" : "activated", "designation" : $('#designation').val()}
 	$.ajax({
 		  type: "POST",
 		  url: "/dropbox/v1/users" ,
@@ -83,11 +103,33 @@
 		  contentType: "application/json",
 		 
 		  success: function(data) {
-			   // alert('please refresh the page to see current status of books');
+			    alert('profile created successfully.');
 			  
 			  }
 		});
+			}
+			 
+			  }
+		});
+         
+  
+	
 });});
+
+
+function validateForm()
+{
+if($('#firstName').val() == '' || $('#lastName').val() == '' || $('#password').val() == ''  || $('#email').val() == '')
+{
+//$('#errfn').innerHTML="this is invalid name";
+alert('Please enter all required information');
+return false;
+}
+
+else
+return true;
+
+}
            </script>
         </body>
 </html>
