@@ -935,3 +935,1497 @@ INFO  [2013-10-26 19:02:53,015] com.yammer.dropwizard.config.Environment: tasks 
 
 INFO  [2013-10-26 19:02:53,359] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
 INFO  [2013-10-26 19:02:53,361] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-11-24 03:08:40,406] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:08:40,464] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:08:40,465] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:08:40,549] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:08:40,604] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:08:40,604] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:08:40,812] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:08:40,819] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:08:40,820] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-11-24 03:27:34,822] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:27:34,878] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:27:34,880] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:27:34,948] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:27:35,002] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:27:35,002] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:27:35,193] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:27:35,216] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:27:35,217] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:29:42,729] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:29:42,729] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:29:42,729] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 03:29:42,729] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 03:30:35,921] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:30:35,978] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:30:35,980] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:30:36,051] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:30:36,107] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:30:36,107] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:30:36,306] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:30:36,313] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:30:36,314] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:33:35,957] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:33:35,958] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:33:35,958] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 03:33:35,958] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 03:33:46,780] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:33:46,837] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:33:46,839] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:33:46,911] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:33:46,967] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:33:46,967] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:33:47,167] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:33:47,174] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:33:47,175] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-11-24 03:36:48,546] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:36:48,602] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:36:48,603] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:36:48,713] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:36:48,767] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:36:48,767] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:36:48,959] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:36:48,965] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:36:48,967] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:41:44,582] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:41:44,583] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:41:44,583] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 03:41:44,583] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 03:41:54,508] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:41:54,563] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:41:54,564] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:41:54,633] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:41:54,698] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:41:54,698] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:41:54,892] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:41:54,898] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:41:54,900] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+ERROR [2013-11-24 03:42:05,489] freemarker.runtime: Template processing error: "Expression file.fileID is undefined on line 7, column 31 in sharedFiles.ftl."
+! freemarker.core.InvalidReferenceException: Expression file.fileID is undefined on line 7, column 31 in sharedFiles.ftl.
+! at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Expression.getStringValue(Expression.java:118) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Expression.getStringValue(Expression.java:93) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.DollarVariable.accept(DollarVariable.java:76) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.MixedContent.accept(MixedContent.java:92) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.IteratorBlock$Context.runLoop(IteratorBlock.java:179) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:428) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.IteratorBlock.accept(IteratorBlock.java:102) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.MixedContent.accept(MixedContent.java:92) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.process(Environment.java:199) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.template.Template.process(Template.java:259) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.getSharedFilesByUserID(DropboxResource.java:228) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_45]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.7.0_45]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jersey.InstrumentedResourceMethodDispatchProvider$TimedRequestDispatcher.dispatch(InstrumentedResourceMethodDispatchProvider.java:32) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jersey.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+INFO  [2013-11-24 03:44:09,255] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:44:09,256] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:44:09,256] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 03:44:09,256] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 03:44:31,563] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:44:31,619] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:44:31,620] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:44:31,691] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:44:31,746] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:44:31,746] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:44:31,941] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:44:31,948] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:44:31,949] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+ERROR [2013-11-24 03:44:54,283] freemarker.runtime: Template processing error: "Expression file.fileID is undefined on line 7, column 31 in sharedFiles.ftl."
+! freemarker.core.InvalidReferenceException: Expression file.fileID is undefined on line 7, column 31 in sharedFiles.ftl.
+! at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Expression.getStringValue(Expression.java:118) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Expression.getStringValue(Expression.java:93) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.DollarVariable.accept(DollarVariable.java:76) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.MixedContent.accept(MixedContent.java:92) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.IteratorBlock$Context.runLoop(IteratorBlock.java:179) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:428) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.IteratorBlock.accept(IteratorBlock.java:102) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.MixedContent.accept(MixedContent.java:92) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.process(Environment.java:199) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.template.Template.process(Template.java:259) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.getSharedFilesByUserID(DropboxResource.java:228) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_45]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.7.0_45]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jersey.InstrumentedResourceMethodDispatchProvider$TimedRequestDispatcher.dispatch(InstrumentedResourceMethodDispatchProvider.java:32) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jersey.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+ERROR [2013-11-24 03:45:04,780] freemarker.runtime: Template processing error: "Expression file.fileID is undefined on line 7, column 31 in sharedFiles.ftl."
+! freemarker.core.InvalidReferenceException: Expression file.fileID is undefined on line 7, column 31 in sharedFiles.ftl.
+! at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Expression.getStringValue(Expression.java:118) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Expression.getStringValue(Expression.java:93) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.DollarVariable.accept(DollarVariable.java:76) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.MixedContent.accept(MixedContent.java:92) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.IteratorBlock$Context.runLoop(IteratorBlock.java:179) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:428) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.IteratorBlock.accept(IteratorBlock.java:102) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.MixedContent.accept(MixedContent.java:92) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.process(Environment.java:199) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.template.Template.process(Template.java:259) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.getSharedFilesByUserID(DropboxResource.java:228) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_45]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.7.0_45]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jersey.InstrumentedResourceMethodDispatchProvider$TimedRequestDispatcher.dispatch(InstrumentedResourceMethodDispatchProvider.java:32) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jersey.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+INFO  [2013-11-24 03:50:06,429] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:50:06,430] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:50:06,430] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 03:50:06,430] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 03:50:17,227] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:50:17,283] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:50:17,284] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:50:17,355] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:50:17,409] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:50:17,409] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:50:17,603] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:50:17,610] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:50:17,611] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:52:31,630] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:52:31,631] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:52:31,631] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 03:52:31,631] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 03:52:41,913] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:52:41,971] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:52:41,973] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:52:42,093] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:52:42,150] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:52:42,150] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:52:42,349] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:52:42,356] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:52:42,357] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+ERROR [2013-11-24 03:52:45,311] freemarker.runtime: Template processing error: "Expression myfiles is undefined on line 21, column 28 in sharedFiles.ftl."
+! freemarker.core.InvalidReferenceException: Expression myfiles is undefined on line 21, column 28 in sharedFiles.ftl.
+! at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.IteratorBlock.accept(IteratorBlock.java:100) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.MixedContent.accept(MixedContent.java:92) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.process(Environment.java:199) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.template.Template.process(Template.java:259) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.getSharedFilesByUserID(DropboxResource.java:242) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_45]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.7.0_45]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jersey.InstrumentedResourceMethodDispatchProvider$TimedRequestDispatcher.dispatch(InstrumentedResourceMethodDispatchProvider.java:32) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jersey.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+ERROR [2013-11-24 03:52:45,311] freemarker.runtime: Template processing error: "Expression myfiles is undefined on line 21, column 28 in sharedFiles.ftl."
+! freemarker.core.InvalidReferenceException: Expression myfiles is undefined on line 21, column 28 in sharedFiles.ftl.
+! at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.IteratorBlock.accept(IteratorBlock.java:100) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.MixedContent.accept(MixedContent.java:92) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.process(Environment.java:199) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.template.Template.process(Template.java:259) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.getSharedFilesByUserID(DropboxResource.java:242) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_45]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.7.0_45]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jersey.InstrumentedResourceMethodDispatchProvider$TimedRequestDispatcher.dispatch(InstrumentedResourceMethodDispatchProvider.java:32) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jersey.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+INFO  [2013-11-24 03:53:39,108] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 03:53:39,109] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:53:39,109] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 03:53:39,109] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 03:53:49,335] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:53:49,390] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:53:49,391] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:53:49,460] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:53:49,514] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:53:49,515] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:53:49,766] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:53:49,773] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:53:49,774] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+WARN  [2013-11-24 03:59:50,362] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 03:59:50,420] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 03:59:50,422] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 03:59:50,491] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 03:59:50,547] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 03:59:50,547] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 03:59:50,749] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 03:59:50,756] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 03:59:50,757] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 04:00:33,189] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 04:00:33,190] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 04:00:33,190] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 04:00:33,190] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 04:00:43,394] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 04:00:43,451] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 04:00:43,453] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 04:00:43,523] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 04:00:43,580] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 04:00:43,580] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 04:00:43,777] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 04:00:43,784] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 04:00:43,785] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 04:01:55,440] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 04:01:55,441] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 04:01:55,441] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 04:01:55,441] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 04:02:05,184] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 04:02:05,242] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 04:02:05,243] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 04:02:05,314] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 04:02:05,369] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 04:02:05,369] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 04:02:05,567] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 04:02:05,573] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 04:02:05,574] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 04:14:19,100] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 04:14:19,100] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 04:14:19,100] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 04:14:19,100] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 04:14:31,047] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 04:14:31,103] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 04:14:31,105] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 04:14:31,192] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 04:14:31,247] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 04:14:31,247] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 04:14:31,442] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 04:14:31,448] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 04:14:31,450] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+ERROR [2013-11-24 04:14:37,947] com.yammer.dropwizard.jersey.LoggingExceptionMapper: Error handling a request: 7c5325796efca715
+! java.lang.NullPointerException: null
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.getFilesSharedByEmailById(DropboxResource.java:153) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_45]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.7.0_45]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jersey.InstrumentedResourceMethodDispatchProvider$TimedRequestDispatcher.dispatch(InstrumentedResourceMethodDispatchProvider.java:32) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jersey.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+ERROR [2013-11-24 05:12:22,700] com.yammer.dropwizard.jersey.LoggingExceptionMapper: Error handling a request: 2e79eff7e5e60831
+! java.lang.NullPointerException: null
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.getFilesSharedByEmailById(DropboxResource.java:153) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_45]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.7.0_45]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jersey.InstrumentedResourceMethodDispatchProvider$TimedRequestDispatcher.dispatch(InstrumentedResourceMethodDispatchProvider.java:32) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jersey.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+INFO  [2013-11-24 05:18:11,212] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 05:18:11,212] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 05:18:11,213] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 05:18:11,213] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 05:18:47,842] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 05:18:47,897] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 05:18:47,898] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 05:18:47,965] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 05:18:48,019] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 05:18:48,019] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 05:18:48,216] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 05:18:48,223] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 05:18:48,225] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 05:39:05,445] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 05:39:05,445] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 05:39:05,445] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 05:39:05,446] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 05:39:15,482] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 05:39:15,537] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 05:39:15,539] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 05:39:15,607] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 05:39:15,661] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/filesshared (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 05:39:15,661] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 05:39:15,851] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles() throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 05:39:15,858] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 05:39:15,860] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 06:15:22,752] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 06:15:22,752] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 06:15:22,753] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 06:15:22,753] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 06:15:34,104] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 06:15:34,165] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 06:15:34,166] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 06:15:34,240] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 06:15:34,297] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/home (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/sharedFiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 06:15:34,297] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 06:15:34,496] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles(int) throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 06:15:34,504] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 06:15:34,505] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+ERROR [2013-11-24 06:15:45,947] freemarker.runtime: Template processing error: "Expression sharedFiles is undefined on line 20, column 28 in sharedFiles.ftl."
+! freemarker.core.InvalidReferenceException: Expression sharedFiles is undefined on line 20, column 28 in sharedFiles.ftl.
+! at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.IteratorBlock.accept(IteratorBlock.java:100) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.MixedContent.accept(MixedContent.java:92) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.process(Environment.java:199) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.template.Template.process(Template.java:259) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.getHomePage(DropboxResource.java:119) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_45]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.7.0_45]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jersey.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+INFO  [2013-11-24 06:16:12,051] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 06:16:12,052] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 06:16:12,052] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 06:16:12,052] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 06:16:22,783] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 06:16:22,839] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 06:16:22,840] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 06:16:22,909] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 06:16:22,963] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/home (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/sharedFiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 06:16:22,963] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 06:16:23,158] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles(int) throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 06:16:23,165] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 06:16:23,166] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+ERROR [2013-11-24 06:17:32,948] freemarker.runtime: Template processing error: "Expression sharedFiles is undefined on line 20, column 28 in sharedFiles.ftl."
+! freemarker.core.InvalidReferenceException: Expression sharedFiles is undefined on line 20, column 28 in sharedFiles.ftl.
+! at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.IteratorBlock.accept(IteratorBlock.java:100) ~[dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.MixedContent.accept(MixedContent.java:92) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.visit(Environment.java:221) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.core.Environment.process(Environment.java:199) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at freemarker.template.Template.process(Template.java:259) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.getHomePage(DropboxResource.java:120) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_45]
+! at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_45]
+! at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.7.0_45]
+! at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jersey.OptionalResourceMethodDispatchAdapter$OptionalRequestDispatcher.dispatch(OptionalResourceMethodDispatchAdapter.java:37) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at javax.servlet.http.HttpServlet.service(HttpServlet.java:848) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:669) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1448) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1419) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:455) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1075) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:384) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1009) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.metrics.jetty.InstrumentedHandler.handle(InstrumentedHandler.java:200) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.GzipHandler.handle(GzipHandler.java:264) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at com.yammer.dropwizard.jetty.BiDiGzipHandler.handle(BiDiGzipHandler.java:123) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.Server.handle(Server.java:368) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:489) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:942) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1004) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:640) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.server.nio.BlockingChannelConnector$BlockingChannelEndPoint.run(BlockingChannelConnector.java:298) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543) [dropbox-0.0.1-SNAPSHOT.jar:na]
+! at java.lang.Thread.run(Unknown Source) [na:1.7.0_45]
+INFO  [2013-11-24 06:18:04,060] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 06:18:04,061] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 06:18:04,061] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 06:18:04,061] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 06:18:16,311] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 06:18:16,369] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 06:18:16,370] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 06:18:16,441] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 06:18:16,497] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/home (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/sharedFiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 06:18:16,497] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 06:18:16,704] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles(int) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 06:18:16,711] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 06:18:16,712] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 06:21:56,333] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 06:21:56,333] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 06:21:56,333] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 06:21:56,334] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 06:22:07,038] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 06:22:07,097] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 06:22:07,098] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 06:22:07,168] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 06:22:07,224] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/home (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/sharedFiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 06:22:07,224] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 06:22:07,421] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles(int) throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 06:22:07,428] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 06:22:07,429] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 06:26:50,535] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2013-11-24 06:26:50,536] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 06:26:50,536] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2013-11-24 06:26:50,536] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+WARN  [2013-11-24 06:27:01,515] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2013-11-24 06:27:01,573] com.yammer.dropwizard.cli.ServerCommand: Starting library-service
+INFO  [2013-11-24 06:27:01,574] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2013-11-24 06:27:01,646] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2013-11-24 06:27:01,703] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     /dropbox/v1/ (edu.sjsu.cmpe.dropbox.api.resources.RootResource)
+    DELETE  /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    DELETE  /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/emailcheck/{email} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/signup (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/doc (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/filesShared/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/home (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/mydoc/{fileID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userID}/myfiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    GET     /dropbox/v1/users/{userid}/sharedFiles (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    POST    /dropbox/v1/users/{userID}/files (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+    PUT     /dropbox/v1/users/{userID}/files/{id} (edu.sjsu.cmpe.dropbox.api.resources.DropboxResource)
+
+INFO  [2013-11-24 06:27:01,703] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+WARN  [2013-11-24 06:27:01,903] com.sun.jersey.spi.inject.Errors: The following warnings have been detected with resource and/or provider classes:
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.createTestFiles(int) throws java.io.IOException, MUST return a non-void type.
+  WARNING: A HTTP GET method, public void edu.sjsu.cmpe.dropbox.api.resources.DropboxResource.GetFile(long) throws java.io.IOException, MUST return a non-void type.
+INFO  [2013-11-24 06:27:01,911] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2013-11-24 06:27:01,913] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081

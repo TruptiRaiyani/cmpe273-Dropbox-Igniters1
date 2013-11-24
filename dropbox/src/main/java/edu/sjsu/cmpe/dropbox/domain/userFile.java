@@ -7,7 +7,7 @@ public class userFile {
 	private String name;
 	private int owner;
 	private String accessType;
-	private ArrayList<String> sharedWith= new ArrayList<String>();
+	private ArrayList<Integer> sharedWith= new ArrayList<Integer>();
 	private boolean update;
 
 	public userFile()
@@ -39,10 +39,10 @@ public class userFile {
 	public void setAccessType(String accessType) {
 		this.accessType = accessType;
 	}
-	public ArrayList<String> getSharedWith() {
+	public ArrayList<Integer> getSharedWith() {
 		return sharedWith;
 	}
-	public void setSharedWith(ArrayList<String> sharedWith) {
+	public void setSharedWith(ArrayList<Integer> sharedWith) {
 		this.sharedWith = sharedWith;
 	}
 	public boolean isUpdate() {

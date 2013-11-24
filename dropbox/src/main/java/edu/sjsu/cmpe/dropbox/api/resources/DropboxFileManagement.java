@@ -110,7 +110,7 @@ public class DropboxFileManagement {
 
 			return fileResponse;
 		} else {
-			FileDto fileResponse = new FileDto();
+			FileDto fileResponse = new FileDto(null);
 			return fileResponse;
 		}
 	}
