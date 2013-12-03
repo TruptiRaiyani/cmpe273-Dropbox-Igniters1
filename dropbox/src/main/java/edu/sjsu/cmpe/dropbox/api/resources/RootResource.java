@@ -18,8 +18,8 @@ import edu.sjsu.cmpe.dropbox.dto.LinkDto;
 import edu.sjsu.cmpe.dropbox.dto.LinksDto;
 
 @Path("/v1/")
-@Produces(MediaType.TEXT_HTML)
-@Consumes(MediaType.TEXT_HTML)
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class RootResource {
 
     public RootResource() {

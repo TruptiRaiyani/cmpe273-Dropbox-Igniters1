@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class User {
     private int userID;
+    private String username;
 	private String firstName;
     private String lastName;
     private String password;
@@ -23,6 +24,14 @@ public class User {
     	setStatus("Activated");
     }
 
+    public String getUserName() {
+		return username;
+	}
+    
+    public void setUserName(String username) {
+		this.username = username;
+	}
+    
 	public String getFirstName() {
 		return firstName;
 	}

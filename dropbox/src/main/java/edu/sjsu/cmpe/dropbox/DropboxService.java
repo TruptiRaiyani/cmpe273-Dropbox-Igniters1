@@ -1,8 +1,10 @@
 package edu.sjsu.cmpe.dropbox;
 
 import com.yammer.dropwizard.Service;
+import com.yammer.dropwizard.assets.AssetsBundle;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
+import com.yammer.dropwizard.views.ViewBundle;
 
 import edu.sjsu.cmpe.dropbox.api.resources.DropboxResource;
 import edu.sjsu.cmpe.dropbox.api.resources.RootResource;
@@ -17,6 +19,8 @@ public class DropboxService extends Service<LibraryServiceConfiguration> {
     @Override
     public void initialize(Bootstrap<LibraryServiceConfiguration> bootstrap) {
 	bootstrap.setName("library-service");
+	bootstrap.addBundle(new ViewBundle());
+    bootstrap.addBundle(new AssetsBundle());
     }
 
     @Override

@@ -30,5 +30,10 @@ public class MongoDBInstance {
 	public DBCollection getColldocument(){
 		return  mongoClient.getDB("test").getCollection("document");
 	}
+	
+	public DBCollection getColldocument_files(){
+		return mongoClient.getDB("test").getCollection("document.files");
+	}
+
 
 }

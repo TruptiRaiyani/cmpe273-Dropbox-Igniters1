@@ -9,8 +9,10 @@ import java.io.InputStream;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -23,7 +25,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -42,8 +50,9 @@ import edu.sjsu.cmpe.dropbox.domain.userFile;
 import edu.sjsu.cmpe.dropbox.dto.FileDto;
 import edu.sjsu.cmpe.dropbox.dto.LinkDto;
 import edu.sjsu.cmpe.dropbox.dto.LinksDto;
+import edu.sjsu.cmpe.dropbox.view.LoginView;
 import edu.sjsu.cmpe.dropbox.view.UploadView;
-import edu.sjsu.cmpe.dropbox.api.resources.DropboxFileManagement;
+import edu.sjsu.cmpe.dropbox.view.shareView;
 import freemarker.template.Configuration;
 import freemarker.template.SimpleHash;
 import freemarker.template.Template;
@@ -64,43 +73,168 @@ public class DropboxResource {
 	private Template template;	
 
 //	Aradhana		
-		@GET    
-	    @Path("/{userID}/files")
-	    @Produces(MediaType.TEXT_HTML)
-	    @Timed(name = "upload-file")
-	    public UploadView getUploadPage(@PathParam("userID") int userID) {
-			return manageFile.getUploadPage(userID);
-	    }    
-		
-		@GET
-		@Path("/{userID}/files/{id}")
-		@Timed(name = "view-file")
-		public FileDto getMyFileByUserIdById(@PathParam("userID") int userID, @PathParam("id") int id) {
-			return manageFile.getMyFileByUserIdById(userID, id);
-		}
-		
-		@POST
-	    @Path("/{userID}/files")
-	    @Consumes(MediaType.MULTIPART_FORM_DATA)
-	    @Timed(name = "create-file")    
-	    public Response fileUpload(@PathParam("userID") int userID, @FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("file") FormDataContentDisposition fileInfo) throws IOException
-	    {
-	        return manageFile.fileUpload(userID, uploadedInputStream, fileInfo);
-	    } 
+	@GET    
+    @Path("/{userID}/files")
+    @Produces(MediaType.TEXT_HTML)
+    @Timed(name = "upload-file")
+    public UploadView getUploadPage(@PathParam("userID") int userID) {
+		return manageFile.getUploadPage(userID);
+    }    
+	
+	@GET
+	@Path("/{userID}/files/{id}")
+	@Timed(name = "view-file")
+	public FileDto getMyFileByUserIdById(@PathParam("userID") int userID, @PathParam("id") int id) {
+		return manageFile.getMyFileByUserIdById(userID, id);
+	}
+	
+	@POST
+    @Path("/{userID}/files")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Timed(name = "create-file")    
+    public Response fileUpload(@PathParam("userID") int userID, @FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("file") FormDataContentDisposition fileInfo) throws IOException
+    {
+        return manageFile.fileUpload(userID, uploadedInputStream, fileInfo);
+    } 
 
-		@DELETE
-		@Path("/{userID}/files/{id}")
-		@Timed(name = "delete-file")
-		public LinkDto deleteMyFileByUserIdAndId(@PathParam("userID") int userID, @PathParam("id") Integer id) {
-	      return manageFile.deleteMyFileByUserIdAndId(userID, id);
-		}
+	@DELETE
+	@Path("/{userID}/files/{id}")
+	@Timed(name = "delete-file")
+	public LinkDto deleteMyFileByUserIdAndId(@PathParam("userID") int userID, @PathParam("id") Integer id) {
+      return manageFile.deleteMyFileByUserIdAndId(userID, id);
+	}
+	
+	@PUT
+	@Path("/{userID}/files/{id}")
+	@Timed(name = "update-sharedWith-file")
+	public ResponseBuilder updateFileById(@PathParam("userID") int userID,	@PathParam("id") int id, @QueryParam("sharedWith") String username) {
+        return manageFile.updateFileById(userID, id, username);
+	}
+	
+//	
+//	@PUT
+//	@Path("/{userID}/files")
+//	@Timed(name = "update-myFiles-file")
+//	public ResponseBuilder updateMyFilesByFileId(@PathParam("userID") int userID, int id) {
+//		
+//       BasicDBObject query = new BasicDBObject("userID",userID);
+//       BasicDBObject command = new BasicDBObject();
+//       command.put("$push", new BasicDBObject("myFiles", id));
+//       colluser.update(query, command);
+//       return Response.status(200);		       
+//	}
+	
+	
+
+	@GET    
+	@Path("/{userID}/myfiles/share")
+	@Produces(MediaType.TEXT_HTML)
+	@Timed(name = "share-file")
+	public shareView getSharePage() {
+		return new shareView();
+	}
+	
+	
+	@GET
+    @Path("/{userID}/myfiles/share1")	  
+	@Produces(MediaType.TEXT_HTML)
+    @Timed(name = "search-user-for-file-share")
+    public Response search(@PathParam("userID") long userid,@QueryParam("term")String term ) throws IOException {
+		String template = "[{\"id\":\"Paul1\",\"label\":\"Paul1\",\"value\":\"Paul1\"},{\"id\":\"Susan\",\"label\":\"Susan\",\"value\":\"Susan\"},{\"id\":\"Andy\",\"label\":\"Andy\",\"value\":\"Andy\"},{\"id\":\"Lynette\",\"label\":\"Lynette\",\"value\":\"Lynette\"},{\"id\":\"Henry\",\"label\":\"Henry\",\"value\":\"Henry\"},{\"id\":\"Mike\",\"label\":\"Mike\",\"value\":\"Mike\"},{\"id\":\"Rennee\",\"label\":\"Rennee\",\"value\":\"Rennee\"},{\"id\":\"Felicia\",\"label\":\"Felicia\",\"value\":\"Felicia\"},{\"id\":\"Laura\",\"label\":\"Laura\",\"value\":\"Laura\"},{\"id\":\"Sara\",\"label\":\"Sara\",\"value\":\"Sara\"},{\"id\":\"George\",\"label\":\"George\",\"value\":\"George\"},{\"id\":\"Rex\",\"label\":\"Rex\",\"value\":\"Rex\"}]";
+		 
+//		String queryTerm = "\".*" + term + ".*\"";
+//		BasicDBObject query = new BasicDBObject("username",term);
+//		BasicDBObject field = new BasicDBObject("username",1);
+//		field.append("_id",0);
+//		DBCursor cursor = colluser.find(query,field);
+//		while(cursor.hasNext()){
+//			System.out.println(cursor.next());
+//		}
+	
+		return Response.status(200).entity(template).build();
+		//return template;
+	}
+	
+	
+	
+	
+	@GET    
+	@Path("/login")
+	@Produces(MediaType.TEXT_HTML)
+	@Timed(name = "login-file")
+	public LoginView getLoginPage() {
+		return new LoginView();
+	}
+
+
+	@POST
+	@Path("/login")
+	@Timed(name="login")	
+	public Response getUsers(String loginJsonObStr) throws JsonParseException, IOException{	
 		
-		@PUT
-		@Path("/{userID}/files/{id}")
-		@Timed(name = "update-files")
-		public void updateFileByEmail(@PathParam("userID") int userID,	@PathParam("id") int id, @QueryParam("sharedWith") String firstName) {
-	        manageFile.updateFileByEmail(userID, id, firstName);
+	    Map<String,String> map = new HashMap<String,String>();
+		ObjectMapper mapper = new ObjectMapper();
+	    //convert JSON string to Map		
+		try {			 
+			//convert JSON string to Map
+			map = mapper.readValue(loginJsonObStr, new TypeReference<HashMap<String,String>>(){});	 
+			System.out.println(map);
+	 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		
+		String userName =  ""; //(String) inputJsonObj.get("input");
+	    String Password = ""; //(String) inputJsonObj.get("input");	    
+		
+	    Iterator it = map.entrySet().iterator();
+	    while (it.hasNext()) {
+	        Map.Entry pairs = (Map.Entry)it.next();
+	        //System.out.println(pairs.getKey() + " = " + pairs.getValue());
+	        switch(pairs.getKey().toString()){
+	        	case "username": 
+	        		userName = pairs.getValue().toString();
+	        		break;
+	        	case "password":
+	        		Password = pairs.getValue().toString();
+	        		break;
+	        }
+	        it.remove(); // avoids a ConcurrentModificationException
+	    }
+		
+		
+	    
+		BasicDBObject query = new BasicDBObject();
+		query.put("username", userName);
+
+		BasicDBObject fields = new BasicDBObject("_id",0);
+		fields.append("password", 1);
+
+		DBCursor cursor = colluser.find(query,fields);
+		String output = "";
+		while (cursor.hasNext()) {
+			output += cursor.next();
+			System.out.println("user :"  + output);
 		}
+
+		ObjectMapper mapper1 = new ObjectMapper();
+		
+		com.fasterxml.jackson.core.JsonFactory factory = mapper.getFactory(); // since 2.1 use mapper.getFactory() instead
+		JsonParser jp = factory.createJsonParser(output);
+		JsonNode actualObj = mapper.readTree(jp);
+		JsonNode pass = actualObj.get("password");
+		
+		
+		if(pass.asText().equals(Password)){		
+			System.out.println("password match");			
+			return Response.status(200).entity(output).build();
+		}
+		else{
+			System.out.println("password doesn't match");
+			return Response.status(403).entity(output).build();
+		}
+
+	}
 // Aradhana ends
 // Sina Starts	
 		@GET

@@ -1,20 +1,29 @@
 package edu.sjsu.cmpe.dropbox.api.resources;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.UnknownHostException;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 
+import org.apache.commons.io.IOUtils;
+
+import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-import com.mongodb.MongoClient;
+import com.mongodb.MongoException;
 import com.mongodb.gridfs.GridFS;
+import com.mongodb.gridfs.GridFSDBFile;
+import com.mongodb.gridfs.GridFSInputFile;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 
 import edu.sjsu.cmpe.dropbox.domain.User;
@@ -29,6 +38,7 @@ public class DropboxFileManagement {
 	private MongoDBInstance mongodb = new MongoDBInstance();
 	private DBCollection colluser = mongodb.getColluser();
 	private DBCollection colldocument = mongodb.getColldocument();
+	private DBCollection colldocument_files = mongodb.getColldocument_files();
 	
 	private static final String FILE_UPLOAD_PATH = "C:/dropbox";
 	private static final int BUFFER_SIZE = 1024;
@@ -107,7 +117,6 @@ public class DropboxFileManagement {
 			FileDto fileResponse = new FileDto((userFile) myFile);
 			fileResponse.addLink(new LinkDto("view-file", "/users/" + userID
 					+ "/fil" + "es/" + id, "GET"));
-
 			return fileResponse;
 		} else {
 			FileDto fileResponse = new FileDto(null);
@@ -128,17 +137,30 @@ public class DropboxFileManagement {
             final String fileType = fileInfo.getType();
             final long fileSize = fileInfo.getSize();
             String uploadedFileLocation = FILE_UPLOAD_PATH + java.io.File.separator  + fileName;
- 
-            try
-            {
-                saveToDisc(uploadedInputStream, uploadedFileLocation);
-                saveToMongoDB(userID,fileName,fileSize,fileType);
+            final String PREFIX = "stream2file";
+            final String SUFFIX = ".tmp";
+            final File tempFile = File.createTempFile(PREFIX,SUFFIX);
+                //tempFile.deleteOnExit();
+                try (FileOutputStream out = new FileOutputStream(tempFile)) {
+                    IOUtils.copy(uploadedInputStream, out);    
+             
+                //saveToDisc(uploadedInputStream, uploadedFileLocation);
+                saveToMongoDB(fileName,tempFile,userID);           	
             }
-            catch (Exception e)
+            catch (UnknownHostException e)
             {
-                respStatus = Response.Status.INTERNAL_SERVER_ERROR;
+            	respStatus = Response.Status.INTERNAL_SERVER_ERROR;
                 e.printStackTrace();
             }
+                catch(MongoException e){
+                	respStatus = Response.Status.INTERNAL_SERVER_ERROR;
+                	e.printStackTrace();
+                }
+                catch(IOException e){
+                	respStatus = Response.Status.INTERNAL_SERVER_ERROR;
+                	e.printStackTrace();
+                }
+                
         }
  
         return Response.status(respStatus).build();
@@ -148,33 +170,75 @@ public class DropboxFileManagement {
     private void saveToDisc(final InputStream fileInputStream, final String fileUploadPath) throws IOException
     {
     	java.io.File file = new java.io.File(fileUploadPath);
-    	final OutputStream out = new FileOutputStream(file);
+    	final OutputStream out1 = new FileOutputStream(file);
         int read = 0;
         byte[] bytes = new byte[BUFFER_SIZE]; 
         while ((read = fileInputStream.read(bytes)) != -1)
         {
-            out.write(bytes, 0, read);
+            out1.write(bytes, 0, read);
         } 
-        out.flush();
-        out.close();
+        out1.flush();
+        out1.close();
     }   
 
 
-	private void saveToMongoDB(int userID, String fileName, long fileSize, String fileType) throws IOException {
-		User user = users.get(userID);
-		// users.get(email).getmyFiles().add(file);
-		BasicDBObject ob = new BasicDBObject();
-		ob.append("name", fileName);
-		ob.append("owner ", userID);
-		ob.append("size ", fileSize);
-		// ob.append("accessType", file.getAccessType());
-		colldocument.insert(ob);
-		BasicDBObject query = new BasicDBObject("email", userID);
-		DBCursor cursor;
-		cursor = colldocument.find(query);
-	}
+    
 
-	public LinkDto deleteMyFileByUserIdAndId(int userID, Integer id) {
+    private void saveToMongoDB(String fileName,File tempFile,int userID) throws IOException{
+    	
+    	GridFS gfsStorage = new GridFS(mongodb.getdb(),"document");
+    	GridFSInputFile gfsFile = gfsStorage.createFile(tempFile);
+    	gfsFile.setFilename(fileName);
+    	gfsFile.save();
+    	
+    	GridFSDBFile fileOutput = gfsStorage.findOne(fileName);   	
+    	   
+        fileOutput.writeTo(new File("C:\\dropbox\\" + fileName));
+        LinkDto link = new LinkDto("view-file", fileName,"GET");
+        fileOutput.writeTo(new File(fileName));
+        int fileID = 0;
+        
+        DBCursor cursor1 = gfsStorage.getFileList();
+    	while(cursor1.hasNext()){
+    		System.out.println(cursor1.next());   		
+    	}
+    	
+    	BasicDBObject query = new BasicDBObject();
+    	BasicDBObject field = new BasicDBObject("fileCount",1);    	
+    	List<GridFSDBFile> cursor =  gfsStorage.find(query,field);    		
+		Iterator< GridFSDBFile> eachFile =  cursor.iterator();
+		while(eachFile.hasNext())
+			{		
+			
+			DBObject obj2=eachFile.next();
+			if(obj2.containsField("fileCount")){			
+				System.out.println("hello");
+				System.out.println(obj2.get("fileCount"));
+				double fileID1=Double.parseDouble(obj2.get("fileCount").toString());
+				fileID = (int) fileID1;
+			}		
+   	 }
+		
+    	    
+    	BasicDBList sharedWith = new BasicDBList();    	
+    	BasicDBObject fileDetails = new BasicDBObject("metadata", new BasicDBObject("fileID",fileID).append("owner",userID).append("accessType","private").append("sharedWith",sharedWith));     	
+    	BasicDBObject findQuery = new BasicDBObject("filename",fileName);    	    	
+    	BasicDBObject updateQuery = new BasicDBObject("$push",fileDetails);    	
+    	colldocument_files.update(findQuery,updateQuery);	
+    	
+    	int id=fileID;
+    	BasicDBObject query2 = new BasicDBObject("fileCount",fileID);
+    	BasicDBObject updateFileCount = new BasicDBObject().append("$set" ,new BasicDBObject("fileCount" ,++fileID));    	
+		colldocument_files.update(query2, updateFileCount);
+		
+		BasicDBObject query3 = new BasicDBObject("userID", userID);
+		BasicDBObject command = new BasicDBObject();
+		command.append("$push", new BasicDBObject("myFiles", id));	
+		colluser.update(query3, command,true,false);
+    }
+    
+   
+    public LinkDto deleteMyFileByUserIdAndId(int userID, Integer id) {
 
 //		if (checkOwnerOfFile(userID, id)) {
 				GridFS myFS = new GridFS(mongodb.getdb(), "document");	
@@ -186,15 +250,15 @@ public class DropboxFileManagement {
 			}*/
 			return new LinkDto("create-file", "/users/" + userID, "POST");
 	}
-	
-	public void updateFileByEmail(int userID, int id,String firstName) {
+    
+	public ResponseBuilder updateFileById(int userID, int id,String username) {
 
 		boolean result = checkOwnerOfFile(userID, id);
 
 		if (result) {
 			DBObject myUserID = null;
 
-			BasicDBObject query = new BasicDBObject("firstName", firstName);
+			BasicDBObject query = new BasicDBObject("username", username);
 			BasicDBObject fields = new BasicDBObject("userID", 1);
 
 			DBCursor cursor = colluser.find(query, fields);
@@ -210,12 +274,14 @@ public class DropboxFileManagement {
 			BasicDBObject query2 = new BasicDBObject("fileID", id);
 			BasicDBObject newDoc2 = new BasicDBObject().append("$push",
 					new BasicDBObject("sharedWith", myUserID.get("userID")));
-			colldocument.update(query2, newDoc2);
+			colldocument_files.update(query2, newDoc2);
+			return Response.status(200);
 		}
 
 		else {
 			System.out
 					.println("User does not have permission to share the file");
+			return Response.status(550);
 
 		}
 	}
