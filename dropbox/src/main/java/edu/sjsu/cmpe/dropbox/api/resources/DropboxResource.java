@@ -46,6 +46,7 @@ import com.sun.jersey.multipart.FormDataParam;
 import com.yammer.metrics.annotation.Timed;
 
 import edu.sjsu.cmpe.dropbox.domain.User;
+import edu.sjsu.cmpe.dropbox.domain.searchObject;
 import edu.sjsu.cmpe.dropbox.domain.userFile;
 import edu.sjsu.cmpe.dropbox.dto.FileDto;
 import edu.sjsu.cmpe.dropbox.dto.LinkDto;
@@ -56,6 +57,10 @@ import edu.sjsu.cmpe.dropbox.view.shareView;
 import freemarker.template.Configuration;
 import freemarker.template.SimpleHash;
 import freemarker.template.Template;
+
+import javax.json.*;
+
+import org.json.JSONArray;
 
 
 @Path("/v1/users")
@@ -140,21 +145,38 @@ public class DropboxResource {
 	@Produces(MediaType.TEXT_HTML)
     @Timed(name = "search-user-for-file-share")
     public Response search(@PathParam("userID") long userid,@QueryParam("term")String term ) throws IOException {
-		String template = "[{\"id\":\"Paul1\",\"label\":\"Paul1\",\"value\":\"Paul1\"},{\"id\":\"Susan\",\"label\":\"Susan\",\"value\":\"Susan\"},{\"id\":\"Andy\",\"label\":\"Andy\",\"value\":\"Andy\"},{\"id\":\"Lynette\",\"label\":\"Lynette\",\"value\":\"Lynette\"},{\"id\":\"Henry\",\"label\":\"Henry\",\"value\":\"Henry\"},{\"id\":\"Mike\",\"label\":\"Mike\",\"value\":\"Mike\"},{\"id\":\"Rennee\",\"label\":\"Rennee\",\"value\":\"Rennee\"},{\"id\":\"Felicia\",\"label\":\"Felicia\",\"value\":\"Felicia\"},{\"id\":\"Laura\",\"label\":\"Laura\",\"value\":\"Laura\"},{\"id\":\"Sara\",\"label\":\"Sara\",\"value\":\"Sara\"},{\"id\":\"George\",\"label\":\"George\",\"value\":\"George\"},{\"id\":\"Rex\",\"label\":\"Rex\",\"value\":\"Rex\"}]";
+		String template;			
 		 
-//		String queryTerm = "\".*" + term + ".*\"";
-//		BasicDBObject query = new BasicDBObject("username",term);
-//		BasicDBObject field = new BasicDBObject("username",1);
-//		field.append("_id",0);
-//		DBCursor cursor = colluser.find(query,field);
-//		while(cursor.hasNext()){
-//			System.out.println(cursor.next());
-//		}
-	
+		String queryTerm =  ".*" + term + ".*" ;
+		BasicDBObject query = new BasicDBObject("username",new BasicDBObject("$regex" , queryTerm));
+		DBObject username;
+		
+		
+		List<searchObject> searchResult = new ArrayList<searchObject>();
+		BasicDBObject field = new BasicDBObject("username",1);
+		field.append("_id",0);
+		DBCursor cursor = colluser.find(query,field);
+		while(cursor.hasNext()){
+			username = cursor.next();
+			Object user = username.get("username");
+			String userString = user.toString();
+			System.out.println(userString);
+			searchObject obj = new searchObject();
+			obj.setId(userString);
+			obj.setLabel(userString);
+			obj.setValue(userString);
+			searchResult.add(obj);
+			
+		}
+		
+		ArrayList<searchObject> list = new ArrayList<searchObject>();
+		ObjectMapper mapper = new ObjectMapper();
+		template = mapper.writeValueAsString(searchResult);
+		System.out.println("template : " + template);
+
 		return Response.status(200).entity(template).build();
-		//return template;
+		
 	}
-	
 	
 	
 	
