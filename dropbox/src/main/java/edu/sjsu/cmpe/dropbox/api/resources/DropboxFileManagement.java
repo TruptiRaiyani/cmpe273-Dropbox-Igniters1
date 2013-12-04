@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -47,16 +48,16 @@ public class DropboxFileManagement {
 	public boolean checkOwnerOfFile(int userId, int fileId) {
 
 		DBObject ownerID = null;
-		BasicDBObject query = new BasicDBObject("fileID", fileId);
-		query.append("owner", userId);
+		BasicDBObject query = new BasicDBObject("metadata.fileID", fileId);
+		query.append("metatdata.owner", userId);
 
 		BasicDBObject fields = new BasicDBObject();
 
-		DBCursor cursor = colldocument.find(query, fields);
+		DBCursor cursor = colldocument_files.find(query, fields);
 
 		while (cursor.hasNext()) {
 			ownerID = cursor.next();
-			System.out.println("ownerId" + ownerID.get("owner"));
+			System.out.println("ownerId" + ownerID.get("metadata.owner"));
 
 		}
 
@@ -145,7 +146,7 @@ public class DropboxFileManagement {
                     IOUtils.copy(uploadedInputStream, out);    
              
                 //saveToDisc(uploadedInputStream, uploadedFileLocation);
-                saveToMongoDB(fileName,tempFile,userID);           	
+                saveToMongoDB(fileName,tempFile,userID,fileType);           	
             }
             catch (UnknownHostException e)
             {
@@ -181,10 +182,9 @@ public class DropboxFileManagement {
         out1.close();
     }   
 
-
     
 
-    private void saveToMongoDB(String fileName,File tempFile,int userID) throws IOException{
+    private void saveToMongoDB(String fileName,File tempFile,int userID,String fileType) throws IOException{
     	
     	GridFS gfsStorage = new GridFS(mongodb.getdb(),"document");
     	GridFSInputFile gfsFile = gfsStorage.createFile(tempFile);
@@ -220,11 +220,19 @@ public class DropboxFileManagement {
    	 }
 		
     	    
-    	BasicDBList sharedWith = new BasicDBList();    	
-    	BasicDBObject fileDetails = new BasicDBObject("metadata", new BasicDBObject("fileID",fileID).append("owner",userID).append("accessType","private").append("sharedWith",sharedWith));     	
-    	BasicDBObject findQuery = new BasicDBObject("filename",fileName);    	    	
-    	BasicDBObject updateQuery = new BasicDBObject("$push",fileDetails);    	
-    	colldocument_files.update(findQuery,updateQuery);	
+		BasicDBList sharedWith = new BasicDBList();    	
+//    	BasicDBObject fileDetails = new BasicDBObject("metadata", new BasicDBObject("fileID",fileID).append("owner",userID).append("accessType","private").append("sharedWith",sharedWith));     	
+//    	BasicDBObject findQuery = new BasicDBObject("filename",fileName);    	    	
+//    	BasicDBObject updateQuery = new BasicDBObject("$push",fileDetails);    	
+    		
+    	
+    	BasicDBObject fileDetails = new BasicDBObject("fileID",fileID);
+    	fileDetails.append("owner",userID);
+    	fileDetails.append("fileType", fileType);
+    	fileDetails.append("accessType","private");
+    	fileDetails.append("sharedWith",sharedWith);
+    	gfsFile.setMetaData(fileDetails);
+    	gfsFile.save();
     	
     	int id=fileID;
     	BasicDBObject query2 = new BasicDBObject("fileCount",fileID);
@@ -251,39 +259,43 @@ public class DropboxFileManagement {
 			return new LinkDto("create-file", "/users/" + userID, "POST");
 	}
     
-	public ResponseBuilder updateFileById(int userID, int id,String username) {
+	public ResponseBuilder updateFileById(int userID, int id,String searchedUsers) {
 
 		boolean result = checkOwnerOfFile(userID, id);
+		List<String> items = Arrays.asList(searchedUsers.split("\\s*,\\s*"));		
 
-		if (result) {
+//		if (result) {
 			DBObject myUserID = null;
-
-			BasicDBObject query = new BasicDBObject("username", username);
-			BasicDBObject fields = new BasicDBObject("userID", 1);
-
-			DBCursor cursor = colluser.find(query, fields);
-
-			while (cursor.hasNext()) {
-				myUserID = cursor.next();
-				System.out.println("user id" + myUserID);
-
+			
+			for(String username: items){
+				
+				BasicDBObject query = new BasicDBObject("username", username);
+				BasicDBObject fields = new BasicDBObject("userID", 1);
+	
+				DBCursor cursor = colluser.find(query, fields);
+	
+				while (cursor.hasNext()) {
+					myUserID = cursor.next();
+					System.out.println("user id" + myUserID);
+	
+				}
+	
+				myUserID.removeField("_id");
+	
+				BasicDBObject query2 = new BasicDBObject("fileID", id);
+				BasicDBObject newDoc2 = new BasicDBObject().append("$push",
+						new BasicDBObject("metadata.sharedWith", myUserID.get("userID")));
+				colldocument_files.update(query2, newDoc2);
 			}
-
-			myUserID.removeField("_id");
-
-			BasicDBObject query2 = new BasicDBObject("fileID", id);
-			BasicDBObject newDoc2 = new BasicDBObject().append("$push",
-					new BasicDBObject("sharedWith", myUserID.get("userID")));
-			colldocument_files.update(query2, newDoc2);
 			return Response.status(200);
-		}
-
-		else {
-			System.out
-					.println("User does not have permission to share the file");
-			return Response.status(550);
-
-		}
+//		}
+//
+//		else {
+//			System.out
+//					.println("User does not have permission to share the file");
+//			return Response.status(550);
+//
+//		}
 	}
 
 }

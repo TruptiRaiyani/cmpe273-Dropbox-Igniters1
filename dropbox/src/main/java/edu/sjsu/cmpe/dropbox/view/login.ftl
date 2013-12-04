@@ -27,25 +27,22 @@ div.inner {
  <script>
  function login(){
 	 var username= $("#user").val();
-     var password= $("#pass").val();
+     var password= $("#pass").val();        
         $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/dropbox/v1/users/login",
-            contentType: "application/json; charset=utf-8",       
-            dataType: "json",
-            data: JSON.stringify({ "username": username, "password" : password }),
-            complete: function (xhr, status) {
-                if (xhr.status!=200) {
-                    debugger;//handle error
-                    alert(xhr.status);
-                    var errorStr = 'HTTP Error: ' + xhr.status + ' ' +  xhr.statusText + ' Login Failed!'
-                    $("#alertSpan").text(errorStr);
-                }else{
-                	//successful
-                	
-                }
-            }
-        });
+           type: "post",
+           url: "http://localhost:8080/dropbox/v1/users/login",
+           contentType: "application/json; charset=utf-8",     
+           dataType: "json",
+           data: JSON.stringify({ "username": username, "password" : password }),
+           success: function(result){
+             window.location = "/dropbox/v1/users/"+ result.userID + "/home";     
+           },
+           error: function(xhr){
+             var errorStr = 'HTTP Error: ' + xhr.status + ' ' +  xhr.statusText + ' Login Failed!'
+             $("#alertSpan").text(errorStr);
+           }
+        });              
+       
  }
         
  </script>
@@ -56,13 +53,13 @@ div.inner {
     <div class="inner" id="loginform">
         <form class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input id="user" name="username" type="text" class="form-control" placeholder="Email address" required autofocus>
+        <input id="user" name="username" type="text" class="form-control" placeholder="Username" required autofocus>
         <input id="pass" name="password" type="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
+       &nbsp&nbsp&nbsp
         <button class="btn btn-lg btn-primary btn-block"  type="button" onclick="login()">Sign in</button>
 	    <span id='alertSpan' style = "color:red"></span>
+	    &nbsp&nbsp
+	    <a href="/dropbox/v1/users/signup">Register Me</a>
       </form>
     </div>
 </div>

@@ -109,8 +109,8 @@ public class DropboxResource {
 	@PUT
 	@Path("/{userID}/files/{id}")
 	@Timed(name = "update-sharedWith-file")
-	public ResponseBuilder updateFileById(@PathParam("userID") int userID,	@PathParam("id") int id, @QueryParam("sharedWith") String username) {
-        return manageFile.updateFileById(userID, id, username);
+	public ResponseBuilder updateFileById(@PathParam("userID") int userID,	@PathParam("id") int id, @QueryParam("sharedWith") String searchedUsers) {
+        return manageFile.updateFileById(userID, id, searchedUsers);
 	}
 	
 //	
@@ -220,39 +220,45 @@ public class DropboxResource {
 	        }
 	        it.remove(); // avoids a ConcurrentModificationException
 	    }
-		
-		
+	    
 	    
 		BasicDBObject query = new BasicDBObject();
 		query.put("username", userName);
 
 		BasicDBObject fields = new BasicDBObject("_id",0);
 		fields.append("password", 1);
+		fields.append("userID", 1);
 
 		DBCursor cursor = colluser.find(query,fields);
 		String output = "";
+		ObjectMapper mapper1 = null;
+		JsonNode pass = null;
+		JsonNode userID =null;
 		while (cursor.hasNext()) {
 			output += cursor.next();
 			System.out.println("user :"  + output);
+			mapper1 = new ObjectMapper();
+			com.fasterxml.jackson.core.JsonFactory factory = mapper.getFactory(); // since 2.1 use mapper.getFactory() instead
+			JsonParser jp = factory.createJsonParser(output);
+			JsonNode actualObj = mapper.readTree(jp);	
+			pass = actualObj.get("password");
+			userID = actualObj.get("userID");
 		}
-
-		ObjectMapper mapper1 = new ObjectMapper();
 		
-		com.fasterxml.jackson.core.JsonFactory factory = mapper.getFactory(); // since 2.1 use mapper.getFactory() instead
-		JsonParser jp = factory.createJsonParser(output);
-		JsonNode actualObj = mapper.readTree(jp);
-		JsonNode pass = actualObj.get("password");
-		
-		
-		if(pass.asText().equals(Password)){		
-			System.out.println("password match");			
-			return Response.status(200).entity(output).build();
+		if(userID==null){
+			System.out.println("No User");			
+			return Response.status(401).entity(output).build();
+		}else{
+			if(pass.asText().equals(Password)){		
+				System.out.println("password match");			
+				return Response.status(200).entity(output).build();
+			}
+			else{
+				System.out.println("password doesn't match");
+				return Response.status(403).entity(output).build();
+			}
+			
 		}
-		else{
-			System.out.println("password doesn't match");
-			return Response.status(403).entity(output).build();
-		}
-
 	}
 // Aradhana ends
 // Sina Starts	
