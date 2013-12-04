@@ -47,8 +47,13 @@
     window.userID = "";
     window.fileID = ""; 
    ('#ui-id-1').className += ' modal-content';  
+   
    $('#shareBtn').click(function(){	    
-	    onShare();
+	    onShare();    
+   });
+   
+   $('#closeBtn').click(function(){	    
+	    onClose();    
    });
   }
   function iframeRef( frameRef ) {
@@ -67,14 +72,32 @@
 	 $($(".close")[0]).click()
 	},
 	error:function(xhr){
-	var errorStr = 'HTTP Error: ' + xhr.status + ' ' +  xhr.statusText + ' Login Failed!'
-	alert(errorStr);
-	$($(".close")[0]).click();
-            // $("#alertSpan").text(errorStr);
+	
 	}
 	});    
        
   }
+  
+  
+  function onClose(){
+  
+	     $.ajax({
+                  type: "POST",
+                  url: "/dropbox/v1/users/sendQueue" ,        
+                  dataType: "json",
+                  contentType: "application/json",
+                  data: JSON.stringify({"userID" : window.userID, "id" : window.fileID, "username" : window.searchedUsers}),              
+                  success: function(data) {
+                          //  alert('please refresh the page to see current status of books');
+                          
+                          }
+                });
+                }
+  
+  
+  
+  
+  
 $(function() {
     function split( val ) {
       return val.split( /,\s*/ );
@@ -129,11 +152,9 @@ $(function() {
                 <div class="jumbotron">
                     <!-- calls getBooks() from HomeResource -->
                     <table class="table table-hover" border="1">
-                      <tr> <td> <button id="home" type="button" name="home" value="${userid}" >Home</button>
-                       <button id="logout" type="button" name="logout" value="${userid}" >Log Out</button> </td> </tr>
-
                     <#list myfiles as file>
-                  
+                    <tr> <td> <button id="home" type="button" name="home" value="${file.owner}" >Home</button>
+                       <button id="logout" type="button" name="logout" value="${file.owner}" >Log Out</button> </td> </tr>
                         <tr>
                             <td>${file.name}</td>
                            <td>${file.fileID}</td> 
@@ -165,7 +186,7 @@ $(function() {
 		  </iframe>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" id="closeBtn" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="shareBtn" >Share</button>
       </div>
     </div><!-- /.modal-content -->
@@ -200,8 +221,7 @@ $(function() {
                 }
                 else if(this.name == "Delete")
 		{
-		if (confirm('Are you sure you want to delete the file?'))
-  		{
+		
 		$.ajax({
 		  type: "DELETE",
 		  url: "/dropbox/v1/users/"+ window.userID +"/files/" + window.fileID ,
@@ -210,9 +230,9 @@ $(function() {
 		  contentType: "application/json",
 		 
 		  success: function(data) {
-			   alert('File deleted successfully.');
+			  
 			  }
-		});}}
+		});}
 		
         else  if(this.name == 'logout')
 	{

@@ -282,10 +282,14 @@ public class DropboxFileManagement {
 	
 				myUserID.removeField("_id");
 	
-				BasicDBObject query2 = new BasicDBObject("fileID", id);
+				BasicDBObject query2 = new BasicDBObject("metadata.fileID", id);
 				BasicDBObject newDoc2 = new BasicDBObject().append("$push",
 						new BasicDBObject("metadata.sharedWith", myUserID.get("userID")));
 				colldocument_files.update(query2, newDoc2);
+				
+				//BasicDBObject obj = new BasicDBObject("sharedWith",myUserID.get("userID"));
+				//colldocument_files
+				
 			}
 			return Response.status(200);
 //		}

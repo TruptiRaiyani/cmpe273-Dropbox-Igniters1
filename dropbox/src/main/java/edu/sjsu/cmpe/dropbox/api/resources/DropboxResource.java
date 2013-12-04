@@ -2,18 +2,22 @@ package edu.sjsu.cmpe.dropbox.api.resources;
 
 import java.awt.Desktop;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.jms.DeliveryMode;
+import javax.jms.JMSException;
+import javax.jms.MessageProducer;
+import javax.jms.TextMessage;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -26,6 +30,9 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
+
+import org.fusesource.stomp.jms.StompJmsConnectionFactory;
+import org.fusesource.stomp.jms.StompJmsDestination;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
@@ -40,7 +47,6 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.gridfs.GridFS;
 import com.mongodb.gridfs.GridFSDBFile;
-import com.mongodb.gridfs.GridFSInputFile;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 import com.yammer.metrics.annotation.Timed;
@@ -51,8 +57,6 @@ import edu.sjsu.cmpe.dropbox.domain.userFile;
 import edu.sjsu.cmpe.dropbox.dto.FileDto;
 import edu.sjsu.cmpe.dropbox.dto.LinkDto;
 import edu.sjsu.cmpe.dropbox.dto.LinksDto;
-import edu.sjsu.cmpe.dropbox.view.LoginView;
-import edu.sjsu.cmpe.dropbox.view.UploadView;
 import edu.sjsu.cmpe.dropbox.view.shareView;
 import freemarker.template.Configuration;
 import freemarker.template.SimpleHash;
@@ -69,6 +73,7 @@ public class DropboxResource {
 	private DB dropboxDB= mongodb.getdb();
 	private DBCollection colluser = mongodb.getColluser();
 	private DBCollection colldocument = mongodb.getColldocument();
+	private DBCollection colldocument_files = mongodb.getColldocument_files();
 	
 	private DropboxFileManagement manageFile = new DropboxFileManagement();
 	private Configuration cfg;
@@ -248,6 +253,92 @@ public class DropboxResource {
 			
 		}
 	}
+	
+	
+	@POST
+    @Path("/sendQueue")
+  
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Timed(name = "Search-publicFiles")
+    public ResponseBuilder sendQueue(@PathParam("userID") int userID,@PathParam("id") int fileID,@PathParam("username") String sharedWithUserName) throws TemplateModelException, JMSException {
+    
+   	
+    	String user ="admin";
+   	String password = "password";
+    	String host = "127.0.0.1";
+   	int port = 61613;
+    	String queue = "/queue/dropbox";
+    	String destination = queue;
+    	StompJmsConnectionFactory factory = new StompJmsConnectionFactory();
+    	factory.setBrokerURI("tcp://" + host + ":" + port);
+
+    	javax.jms.Connection connection = factory.createConnection(user,password);
+    	connection.start();
+    	javax.jms.Session session = connection.createSession(false, javax.jms.Session.AUTO_ACKNOWLEDGE);
+    	StompJmsDestination dest = new StompJmsDestination(destination);
+    	MessageProducer producer = session.createProducer(dest);
+    	producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
+
+    	List<String> items = Arrays.asList(sharedWithUserName.split("\\s*,\\s*"));	
+    	//				
+			DBObject myUserID = null;
+			
+			for(String username: items){
+				
+    	
+    	BasicDBObject sharequery = new BasicDBObject("username",username);
+    	BasicDBObject sharefield = new BasicDBObject("email",1);
+    	sharefield.append("id",0);
+    	DBCursor cursor =colluser.find(sharequery,sharefield);
+    	DBObject shareemail = null;
+    	
+		while (cursor.hasNext()) {
+			shareemail = cursor.next();
+			System.out.println("shareemail" + shareemail );
+					}
+		
+		String email =  shareemail.toString();
+    	
+    	BasicDBObject query = new BasicDBObject("userID",userID);
+    	BasicDBObject field = new BasicDBObject("username",1);
+    	field.append("id",0);
+    	DBCursor cursor1 =colluser.find(sharequery,sharefield);
+    	DBObject usernameSharingFile = null;
+    	
+		while (cursor1.hasNext()) {
+			usernameSharingFile = cursor1.next();
+			System.out.println("username of user sharing" + usernameSharingFile );
+					}
+		
+		String usernameSharing = usernameSharingFile.toString();
+		
+		BasicDBObject query2 = new BasicDBObject("fileId",fileID);
+    	BasicDBObject field2 = new BasicDBObject("filename",1);
+    	field.append("id",0);
+    	DBCursor cursor2 =colldocument_files.find(query2,field2);
+    	DBObject filename = null;
+    	
+		while (cursor1.hasNext()) {
+			filename = cursor2.next();
+			System.out.println("filename" + filename );
+					}
+		
+		String file = filename.toString();
+    	
+    			
+    	System.out.println("Sending messages to " + queue + "...");
+    	String data = "raiyani.trupti@gmail.com; Trupti Raiyani ; Aradhana Shukla ; hello.txt";
+    	String data1 = email + username + usernameSharing + file;
+    	TextMessage msg = session.createTextMessage(data);
+    	msg.setLongProperty("id", System.currentTimeMillis());
+    	producer.send(msg);
+			}
+producer.send(session.createTextMessage("SHUTDOWN"));
+    	
+return Response.status(200);
+			}
+			
+	
 // Aradhana ends
 // Sina Starts	
 			@GET
