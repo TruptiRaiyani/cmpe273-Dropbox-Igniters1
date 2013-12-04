@@ -37,6 +37,8 @@
 		            }
 		            return myXhr;
 		        },
+		        success : 
+		        window.location = "./myfiles",	       
 		        beforeSend: beforeSendHandler,
 		        success: completeHandler,
 		        error: errorHandler,
@@ -66,7 +68,7 @@
             $('progress').attr({value:e.loaded,max:e.total});
         }
     }
-	    
+	 
 </script>
 </head>
 <body>

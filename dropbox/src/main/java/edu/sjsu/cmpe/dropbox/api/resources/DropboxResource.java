@@ -75,13 +75,7 @@ public class DropboxResource {
 	private Template template;	
 
 //	Aradhana		
-	@GET    
-    @Path("/{userID}/files")
-    @Produces(MediaType.TEXT_HTML)
-    @Timed(name = "upload-file")
-    public UploadView getUploadPage(@PathParam("userID") int userID) {
-		return manageFile.getUploadPage(userID);
-    }    
+	    
 	
 	@GET
 	@Path("/{userID}/files/{id}")
@@ -177,13 +171,7 @@ public class DropboxResource {
 	
 	
 	
-	@GET    
-	@Path("/login")
-	@Produces(MediaType.TEXT_HTML)
-	@Timed(name = "login-file")
-	public LoginView getLoginPage() {
-		return new LoginView();
-	}
+	
 
 
 	@POST
@@ -349,8 +337,13 @@ public class DropboxResource {
 		    
 		    @POST
 		    @Timed(name = "create-user")
-		    public Response setUserByEmail(User user) {
-
+		    public Boolean setUserByEmail(User user) {
+		    	boolean isExists = false;
+		    	if(GetFile( user.getEmail()))
+		    		isExists = true;
+		    	else
+		    	{
+		    		isExists = false;
 		    	BasicDBObject query = new BasicDBObject();
 		    	BasicDBObject field = new BasicDBObject();
 		    	field.put("userCount", 1);
@@ -363,6 +356,7 @@ public class DropboxResource {
 		    	ob.append("userID", userID);
 		    	ob.append("firstName", user.getFirstName());
 		    	ob.append("lastName", user.getLastName());
+		    	ob.append("username", user.getUserName());
 		    	ob.append("password", user.getPassword());
 		    	ob.append("email", user.getEmail());
 		    	ob.append("status", user.getStatus());
@@ -386,8 +380,9 @@ public class DropboxResource {
 		        		"/users/" + user.getEmail(), "DELETE"));
 		    	links.addLink(new LinkDto("create-file",
 		        		"/users/" + user.getEmail() +"/files", "POST"));
+		    	}
 
-		    	return Response.status(201).entity(links).build();
+		    	return isExists;
 		  	
 		    }
 		    
@@ -523,79 +518,60 @@ public class DropboxResource {
 		    	return Response.status(200).entity(true).build();
 		    }
 
-			@GET
-		    @Path("/{userID}/doc")
-		    public void createTestFiles(@PathParam("userID") int userID) throws IOException
-		    {
-		    FileInputStream inpus = null;
-		    GridFS myFS = new GridFS(dropboxDB, "document");
-		    GridFSInputFile file ;
-		    BasicDBObject o;
-		    inpus = new FileInputStream("C:\\Users\\Suavo\\Documents\\GitHub\\cmpe273-Dropbox-Igniters\\dropbox\\README.md");
-		   // 
-		    
-		   file =  myFS.createFile(inpus , "README.md");
-		     o = new BasicDBObject("owner" , 1);
-		    o.append("fileID", 1);
-		    o.append("accessType", "public");
-		    o.append("fileType", "pdf");
-
-			ArrayList<Integer> share = new ArrayList<Integer>();
-			share.add(2);
-			o.append("sharedWith", share);
-		   file.setMetaData(o);
-		   file.save();
-		   
-		   inpus = new FileInputStream("C:\\Users\\Suavo\\Documents\\GitHub\\cmpe273-Dropbox-Igniters\\dropbox\\JSON input.txt");
-		   // 
-		    
-		   file =  myFS.createFile(inpus , "JSON input.txt");
-		     o = new BasicDBObject("owner" , 2);
-		    o.append("fileID", 2);
-		    o.append("fileType", "txt");
-		    o.append("accessType", "public");
-		    share = new ArrayList<Integer>();
-			o.append("sharedWith", share);
-		   file.setMetaData(o);
-		   file.save();
-		   inpus = new FileInputStream("C:\\Users\\Suavo\\Documents\\GitHub\\cmpe273-Dropbox-Igniters\\dropbox\\index.html");
-		   // 
-		    
-		   file =  myFS.createFile(inpus , "index.html");
-		     o = new BasicDBObject("owner" , 1);
-		    o.append("fileID", 3);
-		    o.append("fileType", "doc");
-		    o.append("accessType", "public");
-		    share = new ArrayList<Integer>();
-			o.append("sharedWith", share);
-		   file.setMetaData(o);
-		   file.save();
-		   inpus = new FileInputStream("C:\\Users\\Suavo\\Desktop\\5.JPG");
-		   // 
-		    
-		   file =  myFS.createFile(inpus , "5.JPG");
-		    o = new BasicDBObject("owner" , 2);
-		    o.append("fileID", 4);
-		    o.append("fileType", "JPG");
-		    o.append("accessType", "public");
-		    share = new ArrayList<Integer>();
-			share.add(1);
-			o.append("sharedWith", share);
-		   file.setMetaData(o);
-		   file.save();
-		   // retrive
-		  
-		    }
+			
 	// Sina Ends	    
 	    //Trupti Start
+		    @GET    
+		    @Path("/{userID}/files")
+		    @Produces(MediaType.TEXT_HTML)
+		    @Timed(name = "upload-file")
+		    public Response getUploadPage(@PathParam("userID") int userID) {
+		    	List<userFile> uf = new ArrayList<userFile>();
+		    	Writer output = new StringWriter();	    
+		    	try {
+		    		cfg = createFreemarkerConfiguration();
+					template = cfg.getTemplate("upload.ftl");
+					SimpleHash root = new SimpleHash();
+					root.put("myfiles", uf);
+					template.process(root, output);
+					
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    		return Response.status(200).entity(output.toString()).build();
+		    }
+		    
+		    @GET    
+			@Path("/login")
+			@Produces(MediaType.TEXT_HTML)
+			@Timed(name = "login-file")
+			public Response getLoginPage() {
+		    	List<userFile> uf = new ArrayList<userFile>();
+		    	Writer output = new StringWriter();	    
+		    	try {
+		    		cfg = createFreemarkerConfiguration();
+					template = cfg.getTemplate("login.ftl");
+					SimpleHash root = new SimpleHash();
+					root.put("myfiles", uf);
+					template.process(root, output);
+					
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    		return Response.status(200).entity(output.toString()).build();
+			}
+		    
 	    @GET
 	    @Path("/{userID}/myfiles")
 	    @Produces(MediaType.TEXT_HTML)
 	    @Timed(name = "Get-myfiles")
-	    public Response getMyFilesByUserID(@PathParam("userID") long userid) throws IOException {
+	    public Response getMyFilesByUserID(@PathParam("userID") int userid) throws IOException {
 	    		//MongoClient db = new MongoClient();
 	    		//DB dbc = db.getDB("test");
 	    		List<userFile> uf = new ArrayList<userFile>();
+	    		
 	    		GridFS myFS = new GridFS(mongodb.getdb(), "document");
 			
 	    		userFile uf1 = null;
@@ -617,6 +593,7 @@ public class DropboxResource {
 					template = cfg.getTemplate("myfiles.ftl");
 					SimpleHash root = new SimpleHash();
 					root.put("myfiles", uf);
+					root.put("userid", userid);
 					template.process(root, output);
 					
 				} catch (Exception e) {

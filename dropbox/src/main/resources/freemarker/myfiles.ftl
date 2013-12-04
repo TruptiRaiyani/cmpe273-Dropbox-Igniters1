@@ -129,9 +129,11 @@ $(function() {
                 <div class="jumbotron">
                     <!-- calls getBooks() from HomeResource -->
                     <table class="table table-hover" border="1">
+                      <tr> <td> <button id="home" type="button" name="home" value="${userid}" >Home</button>
+                       <button id="logout" type="button" name="logout" value="${userid}" >Log Out</button> </td> </tr>
+
                     <#list myfiles as file>
-                    <tr> <td> <button id="home" type="button" name="home" value="${file.owner}" >Home</button>
-                       <button id="logout" type="button" name="logout" value="${file.owner}" >Log Out</button> </td> </tr>
+                  
                         <tr>
                             <td>${file.name}</td>
                            <td>${file.fileID}</td> 
@@ -198,7 +200,8 @@ $(function() {
                 }
                 else if(this.name == "Delete")
 		{
-		
+		if (confirm('Are you sure you want to delete the file?'))
+  		{
 		$.ajax({
 		  type: "DELETE",
 		  url: "/dropbox/v1/users/"+ window.userID +"/files/" + window.fileID ,
@@ -207,9 +210,9 @@ $(function() {
 		  contentType: "application/json",
 		 
 		  success: function(data) {
-			  
+			   alert('File deleted successfully.');
 			  }
-		});}
+		});}}
 		
         else  if(this.name == 'logout')
 	{

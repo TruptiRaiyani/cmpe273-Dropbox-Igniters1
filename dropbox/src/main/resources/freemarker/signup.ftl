@@ -74,7 +74,7 @@
          return;
          }
          var isExists = true;
-         alert($('#userName').val());
+       //  alert($('#userName').val());
          var formData = {"firstName" : $('#firstName').val(), "lastName" : $('#lastName').val(),"userName" : $('#userName').val(), "password" : $('#password').val(), "email": $('#email').val(), "status" : "activated", "designation" : $('#designation').val()}
 	$.ajax({
 		 type: "POST",
@@ -86,14 +86,15 @@
 		 
 		  success: function(data) {
 			  isExists=data;
-			  if(!isExists)
+			  if(isExists)
 				{
-				alert('profile created successfully.');		
-				 window.location = "/dropbox/v1/users/login";
+				alert('Email address already exists. Please try another one.');
 				}
 			else
 			{
-			alert('Email address already exists. Please try another one.');
+			alert('profile created successfully.');		
+				 window.location = "/dropbox/v1/users/login";
+			
 			}
 			 
 			  }
