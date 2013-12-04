@@ -57,6 +57,7 @@ import edu.sjsu.cmpe.dropbox.view.shareView;
 import freemarker.template.Configuration;
 import freemarker.template.SimpleHash;
 import freemarker.template.Template;
+import freemarker.template.TemplateModelException;
 
 
 @Path("/v1/users")
@@ -255,271 +256,331 @@ public class DropboxResource {
 	}
 // Aradhana ends
 // Sina Starts	
-		@GET
-		@Produces(MediaType.TEXT_HTML)
-	    @Path("/{userID}/home")
-	    public Response getHomePage(@PathParam("userID") int userID) 
-	    {
-			BasicDBObject query = new BasicDBObject("userID",userID);
-			BasicDBObject user = (BasicDBObject)colluser.findOne(query);
-			Writer output = new StringWriter();
-			try {
-	    		cfg = createFreemarkerConfiguration();
-				template = cfg.getTemplate("homePage.ftl");
-				SimpleHash root = new SimpleHash();
-				root.put("user", user);
-				root.put("userID", userID);
-				template.process(root, output);
-				
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return Response.status(201).entity(output.toString()).build();
-	    }
-		
-		
-	    @DELETE
-	    @Path("/{userID}")
-	    @Timed(name = "delete-user")
-	    public Response deleteUserByEmail(@PathParam("userID") int userID) {
-		// FIXME - Dummy code
-	    	BasicDBObject user = new BasicDBObject();
-	    	user.put("userID", userID);
-	    	DBCursor cursor = colluser.find(user);
-	    	GridFS myFS = new GridFS(dropboxDB, "document");	
-	    	while (cursor.hasNext()){
-	    		 BasicDBList e = (BasicDBList) cursor.next().get("myFiles"); 
-	    		 for (int i=0;i<e.size();i++) {
-	    		    	myFS.remove(new BasicDBObject().append("metadata.fileID", e.get(i)));
-	    			 }
-	    	}
+			@GET
+			@Produces(MediaType.TEXT_HTML)
+		    @Path("/{userID}/home")
+		    public Response getHomePage(@PathParam("userID") int userID) 
+		    {
+				BasicDBObject query = new BasicDBObject("userID",userID);
+				BasicDBObject user = (BasicDBObject)colluser.findOne(query);
+				Writer output = new StringWriter();
+				try {
+		    		cfg = createFreemarkerConfiguration();
+					template = cfg.getTemplate("homePage.ftl");
+					SimpleHash root = new SimpleHash();
+					root.put("user", user);
+					root.put("name", "");
+					root.put("userID", userID);
+					template.process(root, output);
+					
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return Response.status(201).entity(output.toString()).build();
+		    }
+			
+			
+		    @DELETE
+		    @Path("/{userID}")
+		    @Timed(name = "delete-user")
+		    public Response deleteUserByEmail(@PathParam("userID") int userID) {
+			// FIXME - Dummy code
+		    	BasicDBObject user = new BasicDBObject();
+		    	user.put("userID", userID);
+		    	DBCursor cursor = colluser.find(user);
+		    	GridFS myFS = new GridFS(dropboxDB, "document");	
+		    	while (cursor.hasNext()){
+		    		 BasicDBList e = (BasicDBList) cursor.next().get("myFiles"); 
+		    		 for (int i=0;i<e.size();i++) {
+		    		    	myFS.remove(new BasicDBObject().append("metadata.fileID", e.get(i)));
+		    			 }
+		    	}
 
-	    	colluser.remove(user);
-	    	return Response.status(201).entity(new LinkDto("create-user", "/users","POST")).build();
-	    }
+		    	colluser.remove(user);
+		    	return Response.status(201).entity(new LinkDto("create-user", "/users","POST")).build();
+		    }
 
-	    @GET
-	    @Path("/{userID}/filesShared/{id}")
-	    @Timed(name = "view-filesShared")
-	    public Response getFilesSharedByEmailById(@PathParam("userID") int userID, @PathParam("id") int id) throws IOException{
+		    @GET
+		    @Path("/{userID}/filesShared/{id}")
+		    @Timed(name = "view-filesShared")
+		    public Response getFilesSharedByEmailById(@PathParam("userID") int userID, @PathParam("id") int id) throws IOException{
 
-	    	BasicDBObject andQuery = new BasicDBObject();
-	    	List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
-	    	obj.add(new BasicDBObject("metadata.fileID", id));
-	    	obj.add(new BasicDBObject("metadata.sharedWith", userID));
-	    	andQuery.put("$and", obj);
+		    	BasicDBObject andQuery = new BasicDBObject();
+		    	List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
+		    	obj.add(new BasicDBObject("metadata.fileID", id));
+		    	obj.add(new BasicDBObject("metadata.sharedWith", userID));
+		    	andQuery.put("$and", obj);
 
-	    	GridFS myFS = new GridFS(dropboxDB, "document");	
-	    	 
-			GridFSDBFile getfile = myFS.findOne(andQuery);
-			String directoryName = "C:/testDB";
-			File theDir = new File(directoryName);
-			  // if the directory does not exist, create it
-			  if (!theDir.exists()) {
-			    System.out.println("creating directory: " + directoryName);
-			    boolean result = theDir.mkdir();  
+		    	GridFS myFS = new GridFS(dropboxDB, "document");	
+		    	 
+				GridFSDBFile getfile = myFS.findOne(andQuery);
+				String directoryName = "C:/testDB";
+				File theDir = new File(directoryName);
+				  // if the directory does not exist, create it
+				  if (!theDir.exists()) {
+				    System.out.println("creating directory: " + directoryName);
+				    boolean result = theDir.mkdir();  
 
-			     if(result) {    
-			       System.out.println("DIR created");  
-			     }
-			  }
-			  String filePath = "C:/testDB/" + getfile.getFilename();
-			  File yourFile = new File(filePath);
-			  if(!yourFile.exists()) {
-			      yourFile.createNewFile();
-			  } 
-			FileOutputStream ofile = new FileOutputStream(filePath);
-				
-		     getfile.writeTo(ofile);
-		     Desktop d =  Desktop.getDesktop();
-		     d.open(yourFile);
+				     if(result) {    
+				       System.out.println("DIR created");  
+				     }
+				  }
+				  String filePath = "C:/testDB/" + getfile.getFilename();
+				  File yourFile = new File(filePath);
+				  if(!yourFile.exists()) {
+				      yourFile.createNewFile();
+				  } 
+				FileOutputStream ofile = new FileOutputStream(filePath);
+					
+			     getfile.writeTo(ofile);
+			     Desktop d =  Desktop.getDesktop();
+			     d.open(yourFile);
 
-	    	
-	    	return Response.status(200).entity(true).build();
-	    }
-	    
-	    @POST
-	    @Timed(name = "create-user")
-	    public Boolean setUserByEmail(User user) {
-	    	boolean isExists = false;
-	    	if(GetFile( user.getEmail()))
-	    		isExists = true;
-	    	else
-	    	{
-	    		isExists = false;
-	    	BasicDBObject query = new BasicDBObject();
-	    	BasicDBObject field = new BasicDBObject();
-	    	field.put("userCount", 1);
-	    	DBCursor cursor = colluser.find(query,field);
-	    	int userID=99;
-	    	BasicDBObject obj = (BasicDBObject) cursor.next();
-	    	userID=obj.getInt("userCount"); 	
-	   
-	    	BasicDBObject ob = new BasicDBObject();
-	    	ob.append("userID", userID);
-	    	
-	    	ob.append("firstName", user.getFirstName());
-	    	ob.append("lastName", user.getLastName());
-	    	ob.append("username", user.getUserName());
-	    	ob.append("password", user.getPassword());
-	    	ob.append("email", user.getEmail());
-	    	ob.append("status", user.getStatus());
-	    	ob.append("designation", user.getDesignation());
-	    	ob.append("myFiles",new ArrayList<String>());
-	    	ob.append("filesShared",new ArrayList<String>());   	
-	    	colluser.insert(ob);
-	    	BasicDBObject countQuery = new BasicDBObject().append("userCount", userID);
-	    	BasicDBObject newDoc = new BasicDBObject();
-	    	newDoc.append("$set", new BasicDBObject("userCount",++userID));
-	    	colluser.update(countQuery,newDoc );
-	    	
-	    	LinksDto links = new LinksDto();
-	    	links.addLink(new LinkDto("view-user", "/users/" + user.getEmail(),
-	    		"GET"));
-	    	links.addLink(new LinkDto("update-user",
-	    		"/users/" + user.getEmail(), "PUT"));
-	    	links.addLink(new LinkDto("update-user",
-	        		"/users/" + user.getEmail(), "POST"));
-	    	links.addLink(new LinkDto("delete-user",
-	        		"/users/" + user.getEmail(), "DELETE"));
-	    	links.addLink(new LinkDto("create-file",
-	        		"/users/" + user.getEmail() +"/files", "POST"));
+		    	
+		    	return Response.status(200).entity(true).build();
+		    }
+		    
+		    @POST
+		    @Timed(name = "create-user")
+		    public Response setUserByEmail(User user) {
 
-	    	}
-	    	return isExists;
-	  	
-	    }
-	    
-	    @ GET
-	    @Path("/{userID}")
-	    @Timed(name = "view-user")
-	    public Response getUserByUID(@PathParam("userID") int userID) {
-	    	
-	    	DBCursor cursor = colluser.find(new BasicDBObject().append("userID", userID ));
-	    	
-	    	String output = "";
-	    	while(cursor.hasNext()) {
-	    		output +=cursor.next();
-	    	
-	    	}
+		    	BasicDBObject query = new BasicDBObject();
+		    	BasicDBObject field = new BasicDBObject();
+		    	field.put("userCount", 1);
+		    	DBCursor cursor = colluser.find(query,field);
+		    	int userID=99;
+		    	BasicDBObject obj = (BasicDBObject) cursor.next();
+		    	userID=obj.getInt("userCount"); 	
+		   
+		    	BasicDBObject ob = new BasicDBObject();
+		    	ob.append("userID", userID);
+		    	ob.append("firstName", user.getFirstName());
+		    	ob.append("lastName", user.getLastName());
+		    	ob.append("password", user.getPassword());
+		    	ob.append("email", user.getEmail());
+		    	ob.append("status", user.getStatus());
+		    	ob.append("designation", user.getDesignation());
+		    	ob.append("myFiles",new ArrayList<String>());
+		    	ob.append("filesShared",new ArrayList<String>());   	
+		    	colluser.insert(ob);
+		    	BasicDBObject countQuery = new BasicDBObject().append("userCount", userID);
+		    	BasicDBObject newDoc = new BasicDBObject();
+		    	newDoc.append("$set", new BasicDBObject("userCount",++userID));
+		    	colluser.update(countQuery,newDoc );
+		    	
+		    	LinksDto links = new LinksDto();
+		    	links.addLink(new LinkDto("view-user", "/users/" + user.getEmail(),
+		    		"GET"));
+		    	links.addLink(new LinkDto("update-user",
+		    		"/users/" + user.getEmail(), "PUT"));
+		    	links.addLink(new LinkDto("update-user",
+		        		"/users/" + user.getEmail(), "POST"));
+		    	links.addLink(new LinkDto("delete-user",
+		        		"/users/" + user.getEmail(), "DELETE"));
+		    	links.addLink(new LinkDto("create-file",
+		        		"/users/" + user.getEmail() +"/files", "POST"));
 
-	    	return Response.status(200).entity(output).build();
-	    }
+		    	return Response.status(201).entity(links).build();
+		  	
+		    }
+		    
+		    @ GET
+		    @Path("/{userID}")
+		    @Timed(name = "view-user")
+		    public Response getUserByUID(@PathParam("userID") int userID) {
+		    	
+		    	DBCursor cursor = colluser.find(new BasicDBObject().append("userID", userID ));
+		    	
+		    	String output = "";
+		    	while(cursor.hasNext()) {
+		    		output +=cursor.next();
+		    	
+		    	}
 
-		private Configuration createFreemarkerConfiguration() {
-	        Configuration retVal = new Configuration();
-	        retVal.setClassForTemplateLoading(DropboxResource.class, "/freemarker");
-	        return retVal;
-	    }
+		    	return Response.status(200).entity(output).build();
+		    }
 
-	    @GET
-	    @Path("/{userid}/sharedFiles")
-	    @Produces(MediaType.TEXT_HTML)
-	    @Timed(name = "Get-filesshared")
-	    public Response getSharedFilesByUserID(@PathParam("userid") Integer userID) {
-	    	List<userFile> uf = new ArrayList<userFile>();
-    		GridFS myFS = new GridFS(dropboxDB, "document");
-		
-    		userFile uf1 = null;
-    		List<GridFSDBFile> getfile = myFS.find(new BasicDBObject("metadata.sharedWith" , userID ));
-    		Writer output = new StringWriter();	    		
-    		Iterator< GridFSDBFile> eachFile =  getfile.iterator();
-    		while( eachFile.hasNext() )
-    			{			 
-    			uf1 = new userFile();
-    			GridFSDBFile gf = eachFile.next();
-    			uf1.setName(gf.getFilename());
-    			DBObject db1 = gf.getMetaData();
-    			uf1.setFileID((Integer) db1.get("fileID"));	  
-    			uf1.setOwner((Integer)db1.get("owner"));
-    			uf1.setAccessType((String)db1.get("accessType"));
-    			uf.add(uf1);
-    			}
-	    	
-	    	try {
-	    		cfg = createFreemarkerConfiguration();
-				template = cfg.getTemplate("sharedFiles.ftl");
-				SimpleHash root = new SimpleHash();
-				root.put("sharedFiles", uf);
-				root.put("userID", userID);
-				template.process(root, output);
-				
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-//	    	String output = "";
-//	    	while(cursor.hasNext()) {
-//	    	    output +=cursor.next();
-//	    	}
-	    	return Response.status(200).entity(output.toString()).build();
-	    }
-		@GET
-	    @Path("/{userID}/doc")
-	    public void createTestFiles(@PathParam("userID") int userID) throws IOException
-	    {
-	    FileInputStream inpus = null;
-	    GridFS myFS = new GridFS(dropboxDB, "document");
-	    GridFSInputFile file ;
-	    BasicDBObject o;
-	    inpus = new FileInputStream("C:\\Users\\Suavo\\Documents\\GitHub\\cmpe273-Dropbox-Igniters\\dropbox\\README.md");
-	   // 
-	    
-	   file =  myFS.createFile(inpus , "README.md");
-	     o = new BasicDBObject("owner" , 1);
-	    o.append("fileID", 1);
-	    o.append("accessType", "public");
-	    o.append("fileType", "pdf");
+			private Configuration createFreemarkerConfiguration() {
+		        Configuration retVal = new Configuration();
+		        retVal.setClassForTemplateLoading(DropboxResource.class, "/freemarker");
+		        return retVal;
+		    }
 
-		ArrayList<Integer> share = new ArrayList<Integer>();
-		share.add(2);
-		o.append("sharedWith", share);
-	   file.setMetaData(o);
-	   file.save();
-	   
-	   inpus = new FileInputStream("C:\\Users\\Suavo\\Documents\\GitHub\\cmpe273-Dropbox-Igniters\\dropbox\\JSON input.txt");
-	   // 
-	    
-	   file =  myFS.createFile(inpus , "JSON input.txt");
-	     o = new BasicDBObject("owner" , 2);
-	    o.append("fileID", 2);
-	    o.append("fileType", "txt");
-	    o.append("accessType", "public");
-	    share = new ArrayList<Integer>();
-		o.append("sharedWith", share);
-	   file.setMetaData(o);
-	   file.save();
-	   inpus = new FileInputStream("C:\\Users\\Suavo\\Documents\\GitHub\\cmpe273-Dropbox-Igniters\\dropbox\\index.html");
-	   // 
-	    
-	   file =  myFS.createFile(inpus , "index.html");
-	     o = new BasicDBObject("owner" , 1);
-	    o.append("fileID", 3);
-	    o.append("fileType", "doc");
-	    o.append("accessType", "public");
-	    share = new ArrayList<Integer>();
-		o.append("sharedWith", share);
-	   file.setMetaData(o);
-	   file.save();
-	   inpus = new FileInputStream("C:\\Users\\Suavo\\Desktop\\5.JPG");
-	   // 
-	    
-	   file =  myFS.createFile(inpus , "5.JPG");
-	    o = new BasicDBObject("owner" , 2);
-	    o.append("fileID", 4);
-	    o.append("fileType", "JPG");
-	    o.append("accessType", "public");
-	    share = new ArrayList<Integer>();
-		share.add(1);
-		o.append("sharedWith", share);
-	   file.setMetaData(o);
-	   file.save();
-	   // retrive
-	  
-	    }
-// Sina Ends	
-	    
+		    @GET
+		    @Path("/{userid}/sharedFiles")
+		    @Produces(MediaType.TEXT_HTML)
+		    @Timed(name = "Get-filesshared")
+		    public Response getSharedFilesByUserID(@PathParam("userid") Integer userID) {
+		    	List<userFile> uf = new ArrayList<userFile>();
+	    		GridFS myFS = new GridFS(dropboxDB, "document");
+			
+	    		userFile uf1 = null;
+	    		List<GridFSDBFile> getfile = myFS.find(new BasicDBObject("metadata.sharedWith" , userID ));
+	    		Writer output = new StringWriter();	    		
+	    		Iterator< GridFSDBFile> eachFile =  getfile.iterator();
+	    		while( eachFile.hasNext() )
+	    			{			 
+	    			uf1 = new userFile();
+	    			GridFSDBFile gf = eachFile.next();
+	    			uf1.setName(gf.getFilename());
+	    			DBObject db1 = gf.getMetaData();
+	    			uf1.setFileID((Integer) db1.get("fileID"));	  
+	    			uf1.setOwner((Integer)db1.get("owner"));
+	    			uf1.setAccessType((String)db1.get("accessType"));
+	    			uf.add(uf1);
+	    			}
+		    	
+		    	try {
+		    		cfg = createFreemarkerConfiguration();
+					template = cfg.getTemplate("sharedFiles.ftl");
+					SimpleHash root = new SimpleHash();
+					root.put("sharedFiles", uf);
+					root.put("userID", userID);
+					template.process(root, output);
+					
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+//		    	String output = "";
+//		    	while(cursor.hasNext()) {
+//		    	    output +=cursor.next();
+//		    	}
+		    	return Response.status(200).entity(output.toString()).build();
+		    }
+		    
+		    @POST
+		    @Path("/{userID}/publicFiles")
+		    @Produces(MediaType.TEXT_HTML)
+		    @Consumes(MediaType.APPLICATION_JSON)
+		    @Timed(name = "Search-publicFiles")
+		    public Response searchPublicFiles(@PathParam("userID") int userID, userFile input) throws TemplateModelException {
+		    	GridFS myFS = new GridFS(dropboxDB, "document");
+		    	BasicDBObject query = new BasicDBObject("filename",new BasicDBObject("$regex",input.getName()).append("$options", 'i')).append("metadata.accessType", "public");
+		    	List<GridFSDBFile> getfile = myFS.find(query);
+		    	Writer output = new StringWriter();
+		    	try {
+		    		cfg = createFreemarkerConfiguration();
+					template = cfg.getTemplate("publicFiles.ftl");
+					SimpleHash root = new SimpleHash();
+					root.put("name",input.getName());
+					root.put("userID", userID);
+					root.put("publicFiles", getfile);
+					template.process(root, output);
+					
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		    	
+		    	return Response.status(200).entity(output.toString()).build();
+		    }
+		    
+		    @GET
+		    @Path("/{userID}/publicFiles/{id}")
+		    @Timed(name = "view-filesShared")
+		    public Response getPublicFilesByUserIDByFileID(@PathParam("userID") int userID, @PathParam("id") int id) throws IOException{
+
+		    	BasicDBObject andQuery = new BasicDBObject();
+		    	List<BasicDBObject> obj = new ArrayList<BasicDBObject>();
+		    	obj.add(new BasicDBObject("metadata.fileID", id));
+		    	obj.add(new BasicDBObject("metadata.accessType", "public"));
+		    	andQuery.put("$and", obj);
+
+		    	GridFS myFS = new GridFS(dropboxDB, "document");	
+		    	 
+				GridFSDBFile getfile = myFS.findOne(andQuery);
+				String directoryName = "C:/testDB";
+				File theDir = new File(directoryName);
+				  // if the directory does not exist, create it
+				  if (!theDir.exists()) {
+				    System.out.println("creating directory: " + directoryName);
+				    boolean result = theDir.mkdir();  
+
+				     if(result) {    
+				       System.out.println("DIR created");  
+				     }
+				  }
+				  String filePath = "C:/testDB/" + getfile.getFilename();
+				  File yourFile = new File(filePath);
+				  if(!yourFile.exists()) {
+				      yourFile.createNewFile();
+				  } 
+				FileOutputStream ofile = new FileOutputStream(filePath);
+					
+			     getfile.writeTo(ofile);
+			     Desktop d =  Desktop.getDesktop();
+			     d.open(yourFile);
+
+		    	
+		    	return Response.status(200).entity(true).build();
+		    }
+
+			@GET
+		    @Path("/{userID}/doc")
+		    public void createTestFiles(@PathParam("userID") int userID) throws IOException
+		    {
+		    FileInputStream inpus = null;
+		    GridFS myFS = new GridFS(dropboxDB, "document");
+		    GridFSInputFile file ;
+		    BasicDBObject o;
+		    inpus = new FileInputStream("C:\\Users\\Suavo\\Documents\\GitHub\\cmpe273-Dropbox-Igniters\\dropbox\\README.md");
+		   // 
+		    
+		   file =  myFS.createFile(inpus , "README.md");
+		     o = new BasicDBObject("owner" , 1);
+		    o.append("fileID", 1);
+		    o.append("accessType", "public");
+		    o.append("fileType", "pdf");
+
+			ArrayList<Integer> share = new ArrayList<Integer>();
+			share.add(2);
+			o.append("sharedWith", share);
+		   file.setMetaData(o);
+		   file.save();
+		   
+		   inpus = new FileInputStream("C:\\Users\\Suavo\\Documents\\GitHub\\cmpe273-Dropbox-Igniters\\dropbox\\JSON input.txt");
+		   // 
+		    
+		   file =  myFS.createFile(inpus , "JSON input.txt");
+		     o = new BasicDBObject("owner" , 2);
+		    o.append("fileID", 2);
+		    o.append("fileType", "txt");
+		    o.append("accessType", "public");
+		    share = new ArrayList<Integer>();
+			o.append("sharedWith", share);
+		   file.setMetaData(o);
+		   file.save();
+		   inpus = new FileInputStream("C:\\Users\\Suavo\\Documents\\GitHub\\cmpe273-Dropbox-Igniters\\dropbox\\index.html");
+		   // 
+		    
+		   file =  myFS.createFile(inpus , "index.html");
+		     o = new BasicDBObject("owner" , 1);
+		    o.append("fileID", 3);
+		    o.append("fileType", "doc");
+		    o.append("accessType", "public");
+		    share = new ArrayList<Integer>();
+			o.append("sharedWith", share);
+		   file.setMetaData(o);
+		   file.save();
+		   inpus = new FileInputStream("C:\\Users\\Suavo\\Desktop\\5.JPG");
+		   // 
+		    
+		   file =  myFS.createFile(inpus , "5.JPG");
+		    o = new BasicDBObject("owner" , 2);
+		    o.append("fileID", 4);
+		    o.append("fileType", "JPG");
+		    o.append("accessType", "public");
+		    share = new ArrayList<Integer>();
+			share.add(1);
+			o.append("sharedWith", share);
+		   file.setMetaData(o);
+		   file.save();
+		   // retrive
+		  
+		    }
+	// Sina Ends	    
 	    //Trupti Start
 	    @GET
 	    @Path("/{userID}/myfiles")

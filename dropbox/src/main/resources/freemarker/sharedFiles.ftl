@@ -1,6 +1,6 @@
 <html>
 <head>
- <title>Home</title>
+ <title>Shared Files</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- Latest compiled and minified CSS -->
             <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">
@@ -17,11 +17,11 @@
                 <div class="jumbotron">
                     <!-- calls getBooks() from HomeResource -->
                     <table class="table table-hover">
-                    <#list sharedFiles as file>
                     <th>File Name</th>
                     <th>File ID</th>
                     <th>Access Type</th>
                     <th>Action</th>
+                    <#list sharedFiles as file>
                         <tr>
                             <td>${file.name}</td>
                            <td>${file.fileID}</td> 
