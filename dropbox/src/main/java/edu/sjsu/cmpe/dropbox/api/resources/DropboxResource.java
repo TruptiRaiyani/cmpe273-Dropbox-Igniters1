@@ -492,7 +492,7 @@ public class DropboxResource {
 		    	GridFS myFS = new GridFS(dropboxDB, "document");	
 		    	 
 				GridFSDBFile getfile = myFS.findOne(andQuery);
-				String directoryName = "C:/testDB";
+				/*String directoryName = "C:/testDB";
 				File theDir = new File(directoryName);
 				  // if the directory does not exist, create it
 				  if (!theDir.exists()) {
@@ -512,9 +512,45 @@ public class DropboxResource {
 					
 			     getfile.writeTo(ofile);
 			     Desktop d =  Desktop.getDesktop();
-			     d.open(yourFile);
+			     d.open(yourFile);*/
+				// get System properties :
+			    java.util.Properties properties = System.getProperties();
 
-		    	
+			    // to print all the keys in the properties map <for testing>
+			    properties.list(System.out);
+				// get Operating System home directory
+			    String home = properties.get("user.home").toString();
+
+			    // get Operating System separator
+			    String separator = properties.get("file.separator").toString();
+
+			    // your directory name
+			    String directoryName = "dropbox";
+
+			    // your file name
+			    String fileName = getfile.getFilename();
+
+
+			    // create your directory Object (wont harm if it is already there ... 
+			    // just an additional object on the heap that will cost you some bytes
+			    File dir = new File(home+separator+directoryName);
+
+			    //  create a new directory, will do nothing if directory exists
+			    dir.mkdir();    
+			    System.out.println(dir);
+			    String filePath = dir+ "/"+fileName;
+			    // create your file Object
+			    File file = new File(filePath);
+			    if(!file.exists()) {
+			    	file.createNewFile();
+				  } 
+				FileOutputStream ofile = new FileOutputStream(filePath);
+					
+			     getfile.writeTo(ofile);
+			     Desktop d =  Desktop.getDesktop();
+			     d.open(file);
+				
+				  		    	
 		    	return Response.status(200).entity(true).build();
 		    }
 
@@ -639,7 +675,7 @@ public class DropboxResource {
 		    	GridFS myFS = new GridFS(mongodb.getdb(), "document");	
 		    	 
 				GridFSDBFile getfile = myFS.findOne(new BasicDBObject("metadata.fileID" , fileID ));
-				String directoryName = "C:/testDB";
+				/*String directoryName = "C:/testDB";
 				File theDir = new File(directoryName);
 				  // if the directory does not exist, create it
 				  if (!theDir.exists()) {
@@ -659,7 +695,46 @@ public class DropboxResource {
 					
 			     getfile.writeTo(ofile);
 			     Desktop d =  Desktop.getDesktop();
-			     d.open(yourFile);
+			     d.open(yourFile);*/
+			     
+				// get System properties :
+			    java.util.Properties properties = System.getProperties();
+
+			    // to print all the keys in the properties map <for testing>
+			    properties.list(System.out);
+				// get Operating System home directory
+			    String home = properties.get("user.home").toString();
+
+			    // get Operating System separator
+			    String separator = properties.get("file.separator").toString();
+
+			    // your directory name
+			    String directoryName = "dropbox";
+
+			    // your file name
+			    String fileName = getfile.getFilename();
+
+
+			    // create your directory Object (wont harm if it is already there ... 
+			    // just an additional object on the heap that will cost you some bytes
+			    File dir = new File(home+separator+directoryName);
+
+			    //  create a new directory, will do nothing if directory exists
+			    dir.mkdir();    
+			    System.out.println(dir);
+			    String filePath = dir+ "/"+fileName;
+			    // create your file Object
+			    File file = new File(filePath);
+			    if(!file.exists()) {
+			    	file.createNewFile();
+				  } 
+				FileOutputStream ofile = new FileOutputStream(filePath);
+					
+			     getfile.writeTo(ofile);
+			     Desktop d =  Desktop.getDesktop();
+			     d.open(file);
+				
+				  
 				
 		    }
 	    @GET
