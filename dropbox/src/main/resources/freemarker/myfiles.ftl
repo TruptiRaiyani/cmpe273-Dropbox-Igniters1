@@ -1,41 +1,43 @@
 <html>
 <head>
- <title>Home</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- Latest compiled and minified CSS -->
-            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">
-            <!-- Optional theme -->
-            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"> </script>
- 		    <script type="text/javascript" src="js/script.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">           
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+ <title>MyFiles</title>
+           
 
 <script>  
 </script>
 </head>
 <body>
-<div> <table><tr> <td> </td> </tr> </table> </div>
-	 <div class="container">
+<div>
+ </div>
+ <div class="container">
                 <div class="jumbotron">
                     <!-- calls getBooks() from HomeResource -->
-                    <table class="table table-hover">
+                    <table class="table table-hover" border="1">
                     <#list myfiles as file>
+                    <tr> <td> <button id="home" type="button" name="home" value="${file.owner}" >Home</button>
+<button id="logout" type="button" name="logout" value="${file.owner}" >Log Out</button> </td> </tr>
                         <tr>
                             <td>${file.name}</td>
                            <td>${file.fileID}</td> 
                            
                            <td><button id="V${file.fileID}" type="button" name="View" value="${file.owner}" >VIEW</button></td>
                             <td><button id="D${file.fileID}" type="button" name="Delete" value="${file.owner}" >DELETE</button></td>
-                         
+                        
                         </tr>
                     </#list>
                     </table>
                 </div>
             </div> <!-- end of container -->
-            
+             
+	 </center>
           
 	        
 	 
-	    </div> 
+	  
 
              <!-- script tags -->
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -78,10 +80,18 @@
 			  
 			  }
 		});}
-                
+		
+        else  if(this.name == 'logout')
+	{
+	 window.location = "/dropbox/v1/users/login";
+	}
+	 else  if(this.name == 'home')
+	{
+	 window.location = "/dropbox/v1/users/"+userID+"/home";
+	}
+	        
 });
            </script>
            
-          
 </body>
 </html>

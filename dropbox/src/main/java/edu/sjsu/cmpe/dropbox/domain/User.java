@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class User {
     private int userID;
-    private String username;
+    private String userName;
 	private String firstName;
     private String lastName;
     private String password;
@@ -25,11 +25,11 @@ public class User {
     }
 
     public String getUserName() {
-		return username;
+		return userName;
 	}
     
     public void setUserName(String username) {
-		this.username = username;
+		this.userName = username;
 	}
     
 	public String getFirstName() {

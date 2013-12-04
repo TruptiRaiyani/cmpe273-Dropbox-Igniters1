@@ -52,3 +52,98 @@
 2013-11-21 13:29:40,167 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2013-11-21 13:29:40,169 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2013-11-21 13:29:40,170 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:11:32,777 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.sjsu.cmpe:dropbox:0.0.1-SNAPSHOT @ C:\cmpe273-Dropbox-Igniters\dropbox\pom.xml.
+2013-12-03 17:11:35,566 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.apache.commons:commons-io:jar:1.3.2 has been relocated to commons-io:commons-io:jar:1.3.2
+2013-12-03 17:11:38,176 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:11:38,190 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:11:38,275 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:11:38,275 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:11:39,302 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.sjsu.cmpe:dropbox:0.0.1-SNAPSHOT @ C:\cmpe273-Dropbox-Igniters\dropbox\pom.xml.
+2013-12-03 17:11:40,282 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.apache.commons:commons-io:jar:1.3.2 has been relocated to commons-io:commons-io:jar:1.3.2
+2013-12-03 17:11:41,482 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:11:41,485 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2013-12-03 17:11:41,487 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:11:41,488 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:13:57,429 [Worker-4] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2013-12-03 17:13:57,561 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.sjsu.cmpe:dropbox:0.0.1-SNAPSHOT @ C:\cmpe273-Dropbox-Igniters\dropbox\pom.xml.
+2013-12-03 17:13:58,102 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.apache.commons:commons-io:jar:1.3.2 has been relocated to commons-io:commons-io:jar:1.3.2
+2013-12-03 17:13:58,753 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /dropbox/src/main/java
+2013-12-03 17:13:58,754 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /dropbox/src/main/resources
+2013-12-03 17:13:58,755 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /dropbox/src/test/java
+2013-12-03 17:13:59,233 [Worker-4] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2013-12-03 17:13:59,726 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.sjsu.cmpe:dropbox:0.0.1-SNAPSHOT @ C:\cmpe273-Dropbox-Igniters\dropbox\pom.xml.
+2013-12-03 17:14:00,207 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.apache.commons:commons-io:jar:1.3.2 has been relocated to commons-io:commons-io:jar:1.3.2
+2013-12-03 17:14:00,563 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:14:00,566 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:14:00,589 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:14:00,589 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:14:23,879 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: edu.sjsu.cmpe:dropbox:0.0.1-SNAPSHOT @ C:\cmpe273-Dropbox-Igniters\dropbox\pom.xml.
+2013-12-03 17:14:24,374 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.apache.commons:commons-io:jar:1.3.2 has been relocated to commons-io:commons-io:jar:1.3.2
+2013-12-03 17:14:25,201 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:14:25,212 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:14:25,241 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:14:25,241 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:14:35,709 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:14:35,717 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:14:35,722 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:14:35,722 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:16:53,194 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:16:53,199 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:16:53,204 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:16:53,205 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:17:27,738 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:17:27,743 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:17:27,748 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:17:27,748 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:20:41,167 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:20:41,172 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:20:41,178 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:20:41,179 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:23:17,715 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:23:17,717 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2013-12-03 17:23:17,721 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:23:17,722 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:23:44,553 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:23:44,554 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2013-12-03 17:23:44,558 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:23:44,559 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:25:59,979 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:25:59,980 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2013-12-03 17:25:59,983 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:25:59,983 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:33:36,318 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:33:36,319 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2013-12-03 17:33:36,324 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:33:36,324 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:34:26,319 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:34:26,320 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2013-12-03 17:34:26,325 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:34:26,326 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:35:55,241 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:35:55,245 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:35:55,249 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:35:55,249 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:48:14,700 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:48:14,701 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2013-12-03 17:48:14,707 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:48:14,707 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:54:22,439 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:54:22,444 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:54:22,450 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:54:22,450 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:55:12,193 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:55:12,196 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:55:12,200 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:55:12,201 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:55:40,925 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:55:40,929 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:55:40,933 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:55:40,933 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:55:50,797 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:55:50,801 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 7 resources
+2013-12-03 17:55:50,805 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:55:50,805 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources
+2013-12-03 17:56:05,798 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:56:05,799 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2013-12-03 17:56:05,802 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2013-12-03 17:56:05,803 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\cmpe273-Dropbox-Igniters\dropbox\src\test\resources

@@ -58,10 +58,6 @@ import freemarker.template.Configuration;
 import freemarker.template.SimpleHash;
 import freemarker.template.Template;
 
-import javax.json.*;
-
-import org.json.JSONArray;
-
 
 @Path("/v1/users")
 @Produces(MediaType.APPLICATION_JSON)
@@ -345,8 +341,13 @@ public class DropboxResource {
 	    
 	    @POST
 	    @Timed(name = "create-user")
-	    public Response setUserByEmail(User user) {
-
+	    public Boolean setUserByEmail(User user) {
+	    	boolean isExists = false;
+	    	if(GetFile( user.getEmail()))
+	    		isExists = true;
+	    	else
+	    	{
+	    		isExists = false;
 	    	BasicDBObject query = new BasicDBObject();
 	    	BasicDBObject field = new BasicDBObject();
 	    	field.put("userCount", 1);
@@ -357,8 +358,10 @@ public class DropboxResource {
 	   
 	    	BasicDBObject ob = new BasicDBObject();
 	    	ob.append("userID", userID);
+	    	
 	    	ob.append("firstName", user.getFirstName());
 	    	ob.append("lastName", user.getLastName());
+	    	ob.append("username", user.getUserName());
 	    	ob.append("password", user.getPassword());
 	    	ob.append("email", user.getEmail());
 	    	ob.append("status", user.getStatus());
@@ -383,7 +386,8 @@ public class DropboxResource {
 	    	links.addLink(new LinkDto("create-file",
 	        		"/users/" + user.getEmail() +"/files", "POST"));
 
-	    	return Response.status(201).entity(links).build();
+	    	}
+	    	return isExists;
 	  	
 	    }
 	    
@@ -634,10 +638,10 @@ public class DropboxResource {
 			}
  		return Response.status(200).entity(output.toString()).build();
 		    }
-	    @GET
+	    /*  @GET
 		   @Path("/emailcheck/{email}")
-		   @Timed(name = "update-userdata")
-		    public boolean GetFile(@PathParam("email") String email)
+		   @Timed(name = "update-userdata")*/
+		    public boolean GetFile(String email)
 	    {
 	    	boolean isExists = false;
 	    	DBCursor cursor = null;
