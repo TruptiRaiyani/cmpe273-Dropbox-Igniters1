@@ -64,11 +64,13 @@
 	dataType : "json",
 	contentType : "application/json",
 	success:function(data){
-	 //$( ".close" )[0].trigger( "click" );
+	 $($(".close")[0]).click()
 	},
 	error:function(xhr){
 	var errorStr = 'HTTP Error: ' + xhr.status + ' ' +  xhr.statusText + ' Login Failed!'
-             $("#alertSpan").text(errorStr);
+	alert(errorStr);
+	$($(".close")[0]).click();
+            // $("#alertSpan").text(errorStr);
 	}
 	});    
        
