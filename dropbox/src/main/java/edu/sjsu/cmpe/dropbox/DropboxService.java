@@ -102,7 +102,7 @@ public class DropboxService extends Service<LibraryServiceConfiguration> {
 				Long third=System.currentTimeMillis()-18;
 				//String con1=uname.substring(0, 2)+uname.substring(uname.length()-2, uname.length());
 				//String unicodegen=second.toString()+con1+third;
-				String body1= "<html> <body> Dear "+SharedWithUserName+", <br /> <br /> This is an email from dropbox application. <br />"+SharedByUserName+" has shared file with you in dropbox. <br />The file name is "+fileName+"</body> </html>";
+				String body1= "<html> <body> Dear "+SharedWithUserName+", <br /> <br /> This is an email from dropbox application. <br /> New file is shared with you. <br />The file name is "+fileName+"</body> </html>";
 			//	String body="<a href=\"http://localhost:98/MyTacks/UserServlet?action=activateUser&num=\">Click here to register</a>";
 				message.setText(body1, "UTF-8", "html");
 				

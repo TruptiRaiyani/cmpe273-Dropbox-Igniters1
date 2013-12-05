@@ -11,10 +11,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.jms.DeliveryMode;
+import javax.jms.JMSException;
+import javax.jms.MessageProducer;
+import javax.jms.TextMessage;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
 import org.apache.commons.io.IOUtils;
+import org.fusesource.stomp.jms.StompJmsConnectionFactory;
+import org.fusesource.stomp.jms.StompJmsDestination;
 
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
@@ -259,7 +265,7 @@ public class DropboxFileManagement {
 			return new LinkDto("create-file", "/users/" + userID, "POST");
 	}
     
-	public ResponseBuilder updateFileById(int userID, int id,String searchedUsers) {
+	public ResponseBuilder updateFileById(int userID, int id,String searchedUsers) throws JMSException {
 
 		boolean result = checkOwnerOfFile(userID, id);
 		List<String> items = Arrays.asList(searchedUsers.split("\\s*,\\s*"));		
@@ -291,6 +297,79 @@ public class DropboxFileManagement {
 				//colldocument_files
 				
 			}
+			String user ="admin";
+		   	String password = "password";
+		    	String host = "127.0.0.1";
+		   	int port = Integer.parseInt("61613");
+		    	String queue = "/queue/dropbox";
+		    	String destination = queue;
+		    	StompJmsConnectionFactory factory = new StompJmsConnectionFactory();
+		    	factory.setBrokerURI("tcp://" + host + ":" + port);
+
+		    	javax.jms.Connection connection = factory.createConnection(user,password);
+		    	connection.start();
+		    	javax.jms.Session session = connection.createSession(false, javax.jms.Session.AUTO_ACKNOWLEDGE);
+		    	StompJmsDestination dest = new StompJmsDestination(destination);
+		    	MessageProducer producer = session.createProducer(dest);
+		    	producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
+
+		    	List<String> items1 = Arrays.asList(searchedUsers.split("\\s*,\\s*"));	
+		    	//				
+					//DBObject myUserID1= null;
+					
+					for(String username: items1){
+						
+		    	
+		    	BasicDBObject sharequery = new BasicDBObject("username",username);
+		    	BasicDBObject sharefield = new BasicDBObject("email",1);
+		    	sharefield.append("_id",0);
+		    	DBCursor cursor =colluser.find(sharequery,sharefield);
+		    	DBObject shareemail = null;
+		    	
+				while (cursor.hasNext()) {
+					shareemail = cursor.next();
+					System.out.println("shareemail" + shareemail );
+							}
+				
+				String email =  (String) shareemail.get("email");
+		    	
+		    	BasicDBObject query = new BasicDBObject("userID",userID);
+		    	BasicDBObject field = new BasicDBObject("username",1);
+		    	field.append("id",0);
+		    	DBCursor cursor1 =colluser.find(sharequery,sharefield);
+		    	DBObject usernameSharingFile = null;
+		    	
+				while (cursor1.hasNext()) {
+					usernameSharingFile = cursor1.next();
+					System.out.println("username of user sharing" + usernameSharingFile );
+							}
+				
+				String usernameSharing = (String) usernameSharingFile.get("username");
+				
+				GridFS myFS = new GridFS(mongodb.getdb(), "document");	
+		    	 
+				GridFSDBFile getfile = myFS.findOne(new BasicDBObject("metadata.fileID" , id ));
+				/*BasicDBObject query2 = new BasicDBObject("fileId",id);
+		    	BasicDBObject field2 = new BasicDBObject("filename",1);
+		    	field.append("id",0);
+		    	DBCursor cursor2 =colldocument_files.find(query2,field2);
+		    	DBObject filename = null;
+		    	
+				while (cursor1.hasNext()) {
+					filename = cursor2.next();
+					System.out.println("filename" + filename );
+							}
+				*/
+				String file = getfile.getFilename();
+		    	
+		    			
+		    	System.out.println("Sending messages to " + queue + "...");
+		    	String data = "raiyani.trupti@gmail.com; Trupti Raiyani ; Aradhana Shukla ; hello.txt";
+		    	String data1 = email + ";" + username + ";"+ usernameSharing + ";"+ file;
+		    	TextMessage msg = session.createTextMessage(data1);
+		    	msg.setLongProperty("id", System.currentTimeMillis());
+		    	producer.send(msg);
+					}
 			return Response.status(200);
 //		}
 //

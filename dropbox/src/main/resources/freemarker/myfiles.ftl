@@ -49,12 +49,11 @@
    ('#ui-id-1').className += ' modal-content';  
    
    $('#shareBtn').click(function(){	    
-	    onShare();    
+	    onShare(); 
+	        
    });
    
-   $('#closeBtn').click(function(){	    
-	    onClose();    
-   });
+   
   }
   function iframeRef( frameRef ) {
     return frameRef.contentWindow ? frameRef.contentWindow.document : frameRef.contentDocument
@@ -79,20 +78,7 @@
   }
   
   
-  function onClose(){
   
-	     $.ajax({
-                  type: "POST",
-                  url: "/dropbox/v1/users/sendQueue" ,        
-                  dataType: "json",
-                  contentType: "application/json",
-                  data: JSON.stringify({"userID" : window.userID, "id" : window.fileID, "username" : window.searchedUsers}),              
-                  success: function(data) {
-                          //  alert('please refresh the page to see current status of books');
-                          
-                          }
-                });
-                }
   
   
   
@@ -152,9 +138,10 @@ $(function() {
                 <div class="jumbotron">
                     <!-- calls getBooks() from HomeResource -->
                     <table class="table table-hover" border="1">
+                    <tr> <td> <button id="home" type="button" name="home" value="${userid}" >Home</button>
+                       <button id="logout" type="button" name="logout" value="${userid}" >Log Out</button> </td> </tr>
                     <#list myfiles as file>
-                    <tr> <td> <button id="home" type="button" name="home" value="${file.owner}" >Home</button>
-                       <button id="logout" type="button" name="logout" value="${file.owner}" >Log Out</button> </td> </tr>
+                    
                         <tr>
                             <td>${file.name}</td>
                            <td>${file.fileID}</td> 

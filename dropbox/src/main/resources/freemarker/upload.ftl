@@ -37,8 +37,7 @@
 		            }
 		            return myXhr;
 		        },
-		        success : 
-		        window.location = "./myfiles",	       
+		      	       
 		        beforeSend: beforeSendHandler,
 		        success: completeHandler,
 		        error: errorHandler,
